@@ -31,9 +31,35 @@ message PBAlign {
 
 message PBText {
     string text = 1;
-    float font_size = 2;
-    PBColor colour = 3;  // this is proper English.
+    google.protobuf.Any text_style = 2;
 }
+
+
+message PBAcidText {
+    string text = 1;
+    google.protobuf.Any text_style = 2;
+}
+
+message PBShadow {
+    google.protobuf.Any offset = 1;
+    google.protobuf.Any color = 2;
+    float blur_radius = 3;
+}
+
+message PBOffset {
+    float x = 1;
+    float y = 2;
+}
+
+message PBTextStyle {
+    string font_family = 1;
+    google.protobuf.Any color = 2;
+    float fontSize = 3;
+    repeated google.protobuf.Any shadows = 4;
+}
+
+
+
 
 message PBSize {
     float width = 1;
@@ -42,23 +68,23 @@ message PBSize {
 
 message PBPreferredSizeWidget {
     google.protobuf.Any child = 1;
-    PBSize preferred_size = 2;
+    google.protobuf.Any preferred_size = 2;
 }
 
 message PBSliverAppBar {
     google.protobuf.Any leading = 1;
-    PBColor background_color = 2;
+    google.protobuf.Any background_color = 2;
     google.protobuf.Any flexible_space = 3;
     float expanded_height = 4;
     bool pinned = 5;
     bool floating = 6;
     float elevation = 7;
     bool force_elevated = 8;
-    PBPreferredSizeWidget bottom = 9;
+    google.protobuf.Any bottom = 9;
 }
 
 message PBIconButton {
-    PBIcon icon = 1;
+    google.protobuf.Any icon = 1;
     string on_pressed = 2;
 }
 
@@ -81,18 +107,13 @@ message PBIconData {
 }
 
 message PBIcon {
-    PBIconData icon = 1;
-    PBColor color = 2;
+    google.protobuf.Any icon = 1;
+    google.protobuf.Any color = 2;
 }
 
 message PBTabBar {
    repeated google.protobuf.Any tabs = 1;
  // controller also necessary but how?
-}
-
-message PBTab {
-    string text = 1;
-    google.protobuf.Any icon = 2;
 }
 
 message PBTabBarView {
@@ -107,3 +128,92 @@ message PBWrap {
 message PBScaffold {
     google.protobuf.Any body = 1;
 }
+
+message PBPositioned {
+    float left = 1;
+    float top = 2;
+    float right = 3;
+    float bottom = 4;
+    float width = 5;
+    float height = 6;
+    google.protobuf.Any child = 7;
+}
+
+
+message PBEdgeInsetsGeometry {
+    float bottom = 1;
+    float end = 2;
+    float left = 3;
+    float right = 4;
+    float start = 5;
+    float top = 6;
+}
+
+message PBPadding {
+    google.protobuf.Any padding = 1;
+    google.protobuf.Any child = 2;
+}
+
+
+message PBStack {
+    repeated google.protobuf.Any children = 1;
+}
+
+message PBRawMaterialButton {
+    google.protobuf.Any constraints = 1;
+    google.protobuf.Any child = 2;
+    float elevation = 3;
+    google.protobuf.Any fillColor = 4;
+    google.protobuf.Any shape = 5;
+}
+
+message PBCircleBorder {
+
+}
+
+message PBShimmer {
+    google.protobuf.Any base_color = 1;
+    google.protobuf.Any highlight_color = 2;
+    google.protobuf.Any child = 3;
+}
+
+
+message PBBoxConstraints {
+    float min_width = 1;
+    float max_width = 2;
+    float min_height = 3;
+    float max_height = 4;
+}
+
+
+message PBContainer {
+    google.protobuf.Any color = 1;
+    google.protobuf.Any width = 2;
+    google.protobuf.Any height = 3;
+    google.protobuf.Any child = 4;
+}
+
+message PBColorTween {
+    google.protobuf.Any begin = 1;
+    google.protobuf.Any end = 2;
+}
+
+
+message PBAnimatedBackground {
+    repeated google.protobuf.Any color_tweens = 1;
+}
+
+
+message PBDetailView {
+
+}
+
+message PBTab {
+    google.protobuf.Any title = 1;
+    
+}
+
+message PBListView {
+    repeated google.protobuf.Any children = 1;
+}
+
