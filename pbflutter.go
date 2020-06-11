@@ -207,3 +207,211 @@ func AnimatedBackground(colorTweens ...*any.Any) *any.Any {
 		ColorTweens: colorTweens,
 	})
 }
+
+func ListView(children []*any.Any, padding *any.Any) *any.Any {
+	return PackAny(&pb.PBListView{
+		Children: children,
+		Padding:  padding,
+	})
+}
+
+func Karte(uuid string,
+	preview, title *any.Any,
+	gradientColor ...*any.Any) *any.Any {
+	return PackAny(&pb.PBKarte{
+		Uuid:          uuid,
+		Title:         title,
+		Preview:       preview,
+		GradientColor: gradientColor,
+	})
+
+}
+
+func ScreenWidth(multiplier, offset float32) *any.Any {
+	return PackAny(&pb.PBScreenWidth{Offset: offset, Multiplier: multiplier})
+}
+
+func ScreenHeight(multiplier, offset float32) *any.Any {
+	return PackAny(&pb.PBScreenHeight{Offset: offset, Multiplier: multiplier})
+}
+
+func RadiusElliptical(x, y float32) *any.Any {
+	return PackAny(&pb.PBRadiusElliptical{X: x, Y: y})
+}
+
+func RadiusCircular(x float32) *any.Any {
+	return PackAny(&pb.PBRadiusElliptical{X: x, Y: x})
+}
+
+func BoxDecoration(color, image, border, borderRadius, gradient, backgroundBlendMode, shape *any.Any, boxShadow []*any.Any) *any.Any {
+	if shape == nil {
+		shape = PackAny(&pb.PBBoxShape{BoxShape: pb.EnumBoxShape_rectangle})
+	}
+	return PackAny(&pb.PBBoxDecoration{
+		Color: color, Image: image, Border: border, BorderRadius: borderRadius, Gradient: gradient, BackgroundBlendMode: backgroundBlendMode, Shape: shape, BoxShadow: boxShadow,
+	})
+}
+
+func BlendMode(blendMode pb.EnumBlendMode) *any.Any {
+	return PackAny(&pb.PBBlendMode{BlendMode: blendMode})
+}
+
+func TransformTranslate(offset, child *any.Any) *any.Any {
+	return PackAny(&pb.PBTransformTranslate{Offset: offset, Child: child})
+}
+
+func TransformRotate(
+	angle float32,
+	origin,
+	alignment,
+	child *any.Any,
+) *any.Any {
+	return PackAny(&pb.PBTransformRotate{
+		Alignment: alignment, Angle: angle, Child: child, Origin: origin,
+	})
+}
+
+func TransformScale(
+	scale float32,
+	origin,
+	alignment,
+	child *any.Any,
+) *any.Any {
+	return PackAny(&pb.PBTransformScale{
+		Alignment: alignment, Child: child, Origin: origin, Scale: scale,
+	})
+
+}
+
+func LinearGradient(
+	begin,
+	end,
+	tileMode,
+	transform *any.Any,
+	colors []*any.Any,
+	stops []float32,
+) *any.Any {
+
+	if tileMode == nil {
+		tileMode = TileMode(pb.EnumTileMode_clamp)
+	}
+
+	return PackAny(&pb.PBLinearGradient{
+		Begin:     begin,
+		End:       end,
+		TileMode:  tileMode,
+		Transform: transform,
+		Colors:    colors,
+		Stops:     stops,
+	})
+}
+
+func Gradient(colors []*any.Any, stops []float32, transform *any.Any) *any.Any {
+	return PackAny(&pb.PBGradient{
+		Colors: colors, Stops: stops, Transform: transform,
+	})
+}
+
+func DecorationImage(
+	image,
+	//        this.onError,
+	colorFilter,
+	fit,
+	alignment,
+	centerSlice,
+	repeat *any.Any,
+	//matchTextDirection
+) *any.Any {
+
+	if alignment == nil {
+		alignment = PackAny(&pb.PBAlignment{X: 0.0, Y: 0.0})
+	}
+
+	if repeat == nil {
+		repeat = PackAny(&pb.PBImageRepeat{Repeat: pb.EnumImageRepeat_noRepeat})
+	}
+	return PackAny(&pb.PBDecorationImage{
+		Image: image, ColorFilter: colorFilter, Fit: fit, Alignment: alignment, CenterSlice: centerSlice, Repeat: repeat,
+	})
+
+}
+
+func BoxFit(
+	boxFit pb.EnumBoxFit) *any.Any {
+	return PackAny(&pb.PBBoxFit{
+		BoxFit: boxFit,
+	})
+
+}
+
+func NetworkImage(url string, scale float32, headers map[string]string) *any.Any {
+	return PackAny(&pb.PBNetworkImage{Url: url, Scale: scale, Headers: headers})
+}
+
+func Container(width, height, color, decoration, child *any.Any) *any.Any {
+	return PackAny(&pb.PBContainer{Color: color, Width: width, Height: height, Child: child, Decoration: decoration})
+}
+
+func Alignment(x, y float32) *any.Any {
+	return PackAny(&pb.PBAlignment{X: x, Y: y})
+}
+
+func TileMode(
+	tileMode pb.EnumTileMode) *any.Any {
+	return PackAny(&pb.PBTileMode{
+		TileMode: tileMode,
+	})
+
+}
+
+func BorderRadiusAll(radius *any.Any) *any.Any {
+	return PackAny(&pb.PBBorderRadiusAll{Radius: radius})
+}
+
+func BorderRadiusOnly(topLeft, topRight, bottomLeft, bottomRight *any.Any) *any.Any {
+	if topLeft == nil {
+		topLeft = RadiusCircular(0.0)
+	}
+
+	if topRight == nil {
+		topRight = RadiusCircular(0.0)
+	}
+
+	if bottomLeft == nil {
+		bottomLeft = RadiusCircular(0.0)
+	}
+
+	if bottomRight == nil {
+		bottomRight = RadiusCircular(0.0)
+	}
+	return PackAny(&pb.PBBorderRadiusOnly{TopLeft: topLeft, TopRight: topRight, BottomLeft: bottomLeft, BottomRight: bottomRight})
+}
+
+func Float(value float32) *any.Any {
+	return PackAny(&pb.PBFloat{Value: value})
+}
+
+func Int(value int32) *any.Any {
+	return PackAny(&pb.PBInt{Value: value})
+}
+
+func String(value string) *any.Any {
+	return PackAny(&pb.PBString{Value: value})
+}
+
+func BorderAll(width, color, style *any.Any) *any.Any {
+	return PackAny(&pb.PBBorderAll{Width: width, Color: color, Style: style})
+}
+
+func BorderStyle(borderStyle pb.EnumBorderStyle) *any.Any {
+	/*	if borderStyle == nil {
+		borderStyle = pb.EnumBorderStyle_BORDER_STYLE_NONE
+	}*/
+	return PackAny(&pb.PBBorderStyle{
+		BorderStyle: borderStyle,
+	})
+}
+
+func BoxShadow(color, offset, blurRadius, spreadRadius *any.Any) *any.Any {
+	return PackAny(&pb.PBBoxShadow{Color: color, Offset: offset, BlurRadius: blurRadius, SpreadRadius: spreadRadius})
+}

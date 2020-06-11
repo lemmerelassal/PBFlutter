@@ -26,6 +26,52 @@ const (
 // of the legacy proto package is being used.
 const _ = proto.ProtoPackageIsVersion4
 
+type PBFontStyle int32
+
+const (
+	PBFontStyle_FONT_STYLE_NORMAL PBFontStyle = 0
+	PBFontStyle_FONT_STYLE_ITALIC PBFontStyle = 1
+)
+
+// Enum value maps for PBFontStyle.
+var (
+	PBFontStyle_name = map[int32]string{
+		0: "FONT_STYLE_NORMAL",
+		1: "FONT_STYLE_ITALIC",
+	}
+	PBFontStyle_value = map[string]int32{
+		"FONT_STYLE_NORMAL": 0,
+		"FONT_STYLE_ITALIC": 1,
+	}
+)
+
+func (x PBFontStyle) Enum() *PBFontStyle {
+	p := new(PBFontStyle)
+	*p = x
+	return p
+}
+
+func (x PBFontStyle) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (PBFontStyle) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[0].Descriptor()
+}
+
+func (PBFontStyle) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[0]
+}
+
+func (x PBFontStyle) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use PBFontStyle.Descriptor instead.
+func (PBFontStyle) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{0}
+}
+
 type PBCollapseMode int32
 
 const (
@@ -62,11 +108,11 @@ func (x PBCollapseMode) String() string {
 }
 
 func (PBCollapseMode) Descriptor() protoreflect.EnumDescriptor {
-	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[0].Descriptor()
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[1].Descriptor()
 }
 
 func (PBCollapseMode) Type() protoreflect.EnumType {
-	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[0]
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[1]
 }
 
 func (x PBCollapseMode) Number() protoreflect.EnumNumber {
@@ -75,7 +121,406 @@ func (x PBCollapseMode) Number() protoreflect.EnumNumber {
 
 // Deprecated: Use PBCollapseMode.Descriptor instead.
 func (PBCollapseMode) EnumDescriptor() ([]byte, []int) {
-	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{0}
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{1}
+}
+
+type EnumBlendMode int32
+
+const (
+	EnumBlendMode_BLEND_MODE_INVALID EnumBlendMode = 0
+	EnumBlendMode_clear              EnumBlendMode = 1
+	EnumBlendMode_src                EnumBlendMode = 2
+	EnumBlendMode_dst                EnumBlendMode = 3
+	EnumBlendMode_srcOver            EnumBlendMode = 4
+	EnumBlendMode_dstOver            EnumBlendMode = 5
+	EnumBlendMode_srcIn              EnumBlendMode = 6
+	EnumBlendMode_dstIn              EnumBlendMode = 7
+	EnumBlendMode_srcOut             EnumBlendMode = 8
+	EnumBlendMode_dstOut             EnumBlendMode = 9
+	EnumBlendMode_srcATop            EnumBlendMode = 10
+	EnumBlendMode_dstATop            EnumBlendMode = 11
+	EnumBlendMode_xor                EnumBlendMode = 12
+	EnumBlendMode_plus               EnumBlendMode = 13
+	EnumBlendMode_modulate           EnumBlendMode = 14
+	EnumBlendMode_screen             EnumBlendMode = 15
+	EnumBlendMode_overlay            EnumBlendMode = 16
+	EnumBlendMode_darken             EnumBlendMode = 17
+	EnumBlendMode_lighten            EnumBlendMode = 18
+	EnumBlendMode_colorDodge         EnumBlendMode = 19
+	EnumBlendMode_colorBurn          EnumBlendMode = 20
+	EnumBlendMode_hardLight          EnumBlendMode = 21
+	EnumBlendMode_softLight          EnumBlendMode = 22
+	EnumBlendMode_difference         EnumBlendMode = 23
+	EnumBlendMode_exclusion          EnumBlendMode = 24
+	EnumBlendMode_multiply           EnumBlendMode = 25
+	EnumBlendMode_hue                EnumBlendMode = 26
+	EnumBlendMode_saturation         EnumBlendMode = 27
+	EnumBlendMode_color              EnumBlendMode = 28
+	EnumBlendMode_luminosity         EnumBlendMode = 29
+)
+
+// Enum value maps for EnumBlendMode.
+var (
+	EnumBlendMode_name = map[int32]string{
+		0:  "BLEND_MODE_INVALID",
+		1:  "clear",
+		2:  "src",
+		3:  "dst",
+		4:  "srcOver",
+		5:  "dstOver",
+		6:  "srcIn",
+		7:  "dstIn",
+		8:  "srcOut",
+		9:  "dstOut",
+		10: "srcATop",
+		11: "dstATop",
+		12: "xor",
+		13: "plus",
+		14: "modulate",
+		15: "screen",
+		16: "overlay",
+		17: "darken",
+		18: "lighten",
+		19: "colorDodge",
+		20: "colorBurn",
+		21: "hardLight",
+		22: "softLight",
+		23: "difference",
+		24: "exclusion",
+		25: "multiply",
+		26: "hue",
+		27: "saturation",
+		28: "color",
+		29: "luminosity",
+	}
+	EnumBlendMode_value = map[string]int32{
+		"BLEND_MODE_INVALID": 0,
+		"clear":              1,
+		"src":                2,
+		"dst":                3,
+		"srcOver":            4,
+		"dstOver":            5,
+		"srcIn":              6,
+		"dstIn":              7,
+		"srcOut":             8,
+		"dstOut":             9,
+		"srcATop":            10,
+		"dstATop":            11,
+		"xor":                12,
+		"plus":               13,
+		"modulate":           14,
+		"screen":             15,
+		"overlay":            16,
+		"darken":             17,
+		"lighten":            18,
+		"colorDodge":         19,
+		"colorBurn":          20,
+		"hardLight":          21,
+		"softLight":          22,
+		"difference":         23,
+		"exclusion":          24,
+		"multiply":           25,
+		"hue":                26,
+		"saturation":         27,
+		"color":              28,
+		"luminosity":         29,
+	}
+)
+
+func (x EnumBlendMode) Enum() *EnumBlendMode {
+	p := new(EnumBlendMode)
+	*p = x
+	return p
+}
+
+func (x EnumBlendMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnumBlendMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[2].Descriptor()
+}
+
+func (EnumBlendMode) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[2]
+}
+
+func (x EnumBlendMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnumBlendMode.Descriptor instead.
+func (EnumBlendMode) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{2}
+}
+
+type EnumBoxFit int32
+
+const (
+	EnumBoxFit_BOX_FIT_INVALID EnumBoxFit = 0
+	EnumBoxFit_fill            EnumBoxFit = 1
+	EnumBoxFit_contain         EnumBoxFit = 2
+	EnumBoxFit_cover           EnumBoxFit = 3
+	EnumBoxFit_fit_width       EnumBoxFit = 4
+	EnumBoxFit_fit_height      EnumBoxFit = 5
+	EnumBoxFit_none            EnumBoxFit = 6
+	EnumBoxFit_scale_down      EnumBoxFit = 7
+)
+
+// Enum value maps for EnumBoxFit.
+var (
+	EnumBoxFit_name = map[int32]string{
+		0: "BOX_FIT_INVALID",
+		1: "fill",
+		2: "contain",
+		3: "cover",
+		4: "fit_width",
+		5: "fit_height",
+		6: "none",
+		7: "scale_down",
+	}
+	EnumBoxFit_value = map[string]int32{
+		"BOX_FIT_INVALID": 0,
+		"fill":            1,
+		"contain":         2,
+		"cover":           3,
+		"fit_width":       4,
+		"fit_height":      5,
+		"none":            6,
+		"scale_down":      7,
+	}
+)
+
+func (x EnumBoxFit) Enum() *EnumBoxFit {
+	p := new(EnumBoxFit)
+	*p = x
+	return p
+}
+
+func (x EnumBoxFit) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnumBoxFit) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[3].Descriptor()
+}
+
+func (EnumBoxFit) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[3]
+}
+
+func (x EnumBoxFit) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnumBoxFit.Descriptor instead.
+func (EnumBoxFit) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{3}
+}
+
+type EnumImageRepeat int32
+
+const (
+	EnumImageRepeat_IMAGE_REPEAT_INVALID EnumImageRepeat = 0
+	EnumImageRepeat_repeat               EnumImageRepeat = 1
+	EnumImageRepeat_repeatX              EnumImageRepeat = 2
+	EnumImageRepeat_repeatY              EnumImageRepeat = 3
+	EnumImageRepeat_noRepeat             EnumImageRepeat = 4
+)
+
+// Enum value maps for EnumImageRepeat.
+var (
+	EnumImageRepeat_name = map[int32]string{
+		0: "IMAGE_REPEAT_INVALID",
+		1: "repeat",
+		2: "repeatX",
+		3: "repeatY",
+		4: "noRepeat",
+	}
+	EnumImageRepeat_value = map[string]int32{
+		"IMAGE_REPEAT_INVALID": 0,
+		"repeat":               1,
+		"repeatX":              2,
+		"repeatY":              3,
+		"noRepeat":             4,
+	}
+)
+
+func (x EnumImageRepeat) Enum() *EnumImageRepeat {
+	p := new(EnumImageRepeat)
+	*p = x
+	return p
+}
+
+func (x EnumImageRepeat) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnumImageRepeat) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[4].Descriptor()
+}
+
+func (EnumImageRepeat) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[4]
+}
+
+func (x EnumImageRepeat) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnumImageRepeat.Descriptor instead.
+func (EnumImageRepeat) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{4}
+}
+
+type EnumBoxShape int32
+
+const (
+	EnumBoxShape_BOX_SHAPE_INVALID EnumBoxShape = 0
+	EnumBoxShape_rectangle         EnumBoxShape = 1
+	EnumBoxShape_circle            EnumBoxShape = 2
+)
+
+// Enum value maps for EnumBoxShape.
+var (
+	EnumBoxShape_name = map[int32]string{
+		0: "BOX_SHAPE_INVALID",
+		1: "rectangle",
+		2: "circle",
+	}
+	EnumBoxShape_value = map[string]int32{
+		"BOX_SHAPE_INVALID": 0,
+		"rectangle":         1,
+		"circle":            2,
+	}
+)
+
+func (x EnumBoxShape) Enum() *EnumBoxShape {
+	p := new(EnumBoxShape)
+	*p = x
+	return p
+}
+
+func (x EnumBoxShape) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnumBoxShape) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[5].Descriptor()
+}
+
+func (EnumBoxShape) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[5]
+}
+
+func (x EnumBoxShape) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnumBoxShape.Descriptor instead.
+func (EnumBoxShape) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{5}
+}
+
+type EnumTileMode int32
+
+const (
+	EnumTileMode_TILE_MODE_INVALID EnumTileMode = 0
+	EnumTileMode_clamp             EnumTileMode = 1
+	EnumTileMode_repeated          EnumTileMode = 2
+	EnumTileMode_mirror            EnumTileMode = 3
+)
+
+// Enum value maps for EnumTileMode.
+var (
+	EnumTileMode_name = map[int32]string{
+		0: "TILE_MODE_INVALID",
+		1: "clamp",
+		2: "repeated",
+		3: "mirror",
+	}
+	EnumTileMode_value = map[string]int32{
+		"TILE_MODE_INVALID": 0,
+		"clamp":             1,
+		"repeated":          2,
+		"mirror":            3,
+	}
+)
+
+func (x EnumTileMode) Enum() *EnumTileMode {
+	p := new(EnumTileMode)
+	*p = x
+	return p
+}
+
+func (x EnumTileMode) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnumTileMode) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[6].Descriptor()
+}
+
+func (EnumTileMode) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[6]
+}
+
+func (x EnumTileMode) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnumTileMode.Descriptor instead.
+func (EnumTileMode) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{6}
+}
+
+type EnumBorderStyle int32
+
+const (
+	EnumBorderStyle_BORDER_STYLE_INVALID EnumBorderStyle = 0
+	EnumBorderStyle_BORDER_STYLE_NONE    EnumBorderStyle = 1
+	EnumBorderStyle_BORDER_STYLE_SOLID   EnumBorderStyle = 2
+)
+
+// Enum value maps for EnumBorderStyle.
+var (
+	EnumBorderStyle_name = map[int32]string{
+		0: "BORDER_STYLE_INVALID",
+		1: "BORDER_STYLE_NONE",
+		2: "BORDER_STYLE_SOLID",
+	}
+	EnumBorderStyle_value = map[string]int32{
+		"BORDER_STYLE_INVALID": 0,
+		"BORDER_STYLE_NONE":    1,
+		"BORDER_STYLE_SOLID":   2,
+	}
+)
+
+func (x EnumBorderStyle) Enum() *EnumBorderStyle {
+	p := new(EnumBorderStyle)
+	*p = x
+	return p
+}
+
+func (x EnumBorderStyle) String() string {
+	return protoimpl.X.EnumStringOf(x.Descriptor(), protoreflect.EnumNumber(x))
+}
+
+func (EnumBorderStyle) Descriptor() protoreflect.EnumDescriptor {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[7].Descriptor()
+}
+
+func (EnumBorderStyle) Type() protoreflect.EnumType {
+	return &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes[7]
+}
+
+func (x EnumBorderStyle) Number() protoreflect.EnumNumber {
+	return protoreflect.EnumNumber(x)
+}
+
+// Deprecated: Use EnumBorderStyle.Descriptor instead.
+func (EnumBorderStyle) EnumDescriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{7}
 }
 
 type PBColor struct {
@@ -547,10 +992,18 @@ type PBTextStyle struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	FontFamily string     `protobuf:"bytes,1,opt,name=font_family,json=fontFamily,proto3" json:"font_family,omitempty"`
-	Color      *any.Any   `protobuf:"bytes,2,opt,name=color,proto3" json:"color,omitempty"`
-	FontSize   float32    `protobuf:"fixed32,3,opt,name=fontSize,proto3" json:"fontSize,omitempty"`
-	Shadows    []*any.Any `protobuf:"bytes,4,rep,name=shadows,proto3" json:"shadows,omitempty"`
+	FontFamily         string      `protobuf:"bytes,1,opt,name=font_family,json=fontFamily,proto3" json:"font_family,omitempty"`
+	Color              *any.Any    `protobuf:"bytes,2,opt,name=color,proto3" json:"color,omitempty"`
+	FontSize           float32     `protobuf:"fixed32,3,opt,name=font_size,json=fontSize,proto3" json:"font_size,omitempty"`
+	Shadows            []*any.Any  `protobuf:"bytes,4,rep,name=shadows,proto3" json:"shadows,omitempty"`
+	FontWeight         uint32      `protobuf:"varint,5,opt,name=font_weight,json=fontWeight,proto3" json:"font_weight,omitempty"`
+	FontStyle          PBFontStyle `protobuf:"varint,6,opt,name=font_style,json=fontStyle,proto3,enum=lemmerelassal.v1.pbflutter.PBFontStyle" json:"font_style,omitempty"`
+	Height             uint32      `protobuf:"varint,7,opt,name=height,proto3" json:"height,omitempty"`
+	Decoration         *any.Any    `protobuf:"bytes,8,opt,name=decoration,proto3" json:"decoration,omitempty"`
+	DecorationColor    *any.Any    `protobuf:"bytes,9,opt,name=decoration_color,json=decorationColor,proto3" json:"decoration_color,omitempty"`
+	DecorationTyle     *any.Any    `protobuf:"bytes,10,opt,name=decoration_tyle,json=decorationTyle,proto3" json:"decoration_tyle,omitempty"`
+	Foreground         *any.Any    `protobuf:"bytes,11,opt,name=foreground,proto3" json:"foreground,omitempty"`
+	FontFamilyFallback []string    `protobuf:"bytes,12,rep,name=font_family_fallback,json=fontFamilyFallback,proto3" json:"font_family_fallback,omitempty"`
 }
 
 func (x *PBTextStyle) Reset() {
@@ -609,6 +1062,62 @@ func (x *PBTextStyle) GetFontSize() float32 {
 func (x *PBTextStyle) GetShadows() []*any.Any {
 	if x != nil {
 		return x.Shadows
+	}
+	return nil
+}
+
+func (x *PBTextStyle) GetFontWeight() uint32 {
+	if x != nil {
+		return x.FontWeight
+	}
+	return 0
+}
+
+func (x *PBTextStyle) GetFontStyle() PBFontStyle {
+	if x != nil {
+		return x.FontStyle
+	}
+	return PBFontStyle_FONT_STYLE_NORMAL
+}
+
+func (x *PBTextStyle) GetHeight() uint32 {
+	if x != nil {
+		return x.Height
+	}
+	return 0
+}
+
+func (x *PBTextStyle) GetDecoration() *any.Any {
+	if x != nil {
+		return x.Decoration
+	}
+	return nil
+}
+
+func (x *PBTextStyle) GetDecorationColor() *any.Any {
+	if x != nil {
+		return x.DecorationColor
+	}
+	return nil
+}
+
+func (x *PBTextStyle) GetDecorationTyle() *any.Any {
+	if x != nil {
+		return x.DecorationTyle
+	}
+	return nil
+}
+
+func (x *PBTextStyle) GetForeground() *any.Any {
+	if x != nil {
+		return x.Foreground
+	}
+	return nil
+}
+
+func (x *PBTextStyle) GetFontFamilyFallback() []string {
+	if x != nil {
+		return x.FontFamilyFallback
 	}
 	return nil
 }
@@ -1845,10 +2354,11 @@ type PBContainer struct {
 	sizeCache     protoimpl.SizeCache
 	unknownFields protoimpl.UnknownFields
 
-	Color  *any.Any `protobuf:"bytes,1,opt,name=color,proto3" json:"color,omitempty"`
-	Width  *any.Any `protobuf:"bytes,2,opt,name=width,proto3" json:"width,omitempty"`
-	Height *any.Any `protobuf:"bytes,3,opt,name=height,proto3" json:"height,omitempty"`
-	Child  *any.Any `protobuf:"bytes,4,opt,name=child,proto3" json:"child,omitempty"`
+	Color      *any.Any `protobuf:"bytes,1,opt,name=color,proto3" json:"color,omitempty"`
+	Width      *any.Any `protobuf:"bytes,2,opt,name=width,proto3" json:"width,omitempty"`
+	Height     *any.Any `protobuf:"bytes,3,opt,name=height,proto3" json:"height,omitempty"`
+	Child      *any.Any `protobuf:"bytes,4,opt,name=child,proto3" json:"child,omitempty"`
+	Decoration *any.Any `protobuf:"bytes,5,opt,name=decoration,proto3" json:"decoration,omitempty"`
 }
 
 func (x *PBContainer) Reset() {
@@ -1907,6 +2417,13 @@ func (x *PBContainer) GetHeight() *any.Any {
 func (x *PBContainer) GetChild() *any.Any {
 	if x != nil {
 		return x.Child
+	}
+	return nil
+}
+
+func (x *PBContainer) GetDecoration() *any.Any {
+	if x != nil {
+		return x.Decoration
 	}
 	return nil
 }
@@ -2013,6 +2530,1784 @@ func (x *PBAnimatedBackground) GetColorTweens() []*any.Any {
 	return nil
 }
 
+type PBDetailView struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+}
+
+func (x *PBDetailView) Reset() {
+	*x = PBDetailView{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[32]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBDetailView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBDetailView) ProtoMessage() {}
+
+func (x *PBDetailView) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[32]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBDetailView.ProtoReflect.Descriptor instead.
+func (*PBDetailView) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{32}
+}
+
+type PBTabEntry struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Title *any.Any `protobuf:"bytes,1,opt,name=title,proto3" json:"title,omitempty"`
+}
+
+func (x *PBTabEntry) Reset() {
+	*x = PBTabEntry{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[33]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBTabEntry) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBTabEntry) ProtoMessage() {}
+
+func (x *PBTabEntry) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[33]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBTabEntry.ProtoReflect.Descriptor instead.
+func (*PBTabEntry) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{33}
+}
+
+func (x *PBTabEntry) GetTitle() *any.Any {
+	if x != nil {
+		return x.Title
+	}
+	return nil
+}
+
+type PBListView struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Children []*any.Any `protobuf:"bytes,1,rep,name=children,proto3" json:"children,omitempty"`
+	Padding  *any.Any   `protobuf:"bytes,2,opt,name=padding,proto3" json:"padding,omitempty"`
+}
+
+func (x *PBListView) Reset() {
+	*x = PBListView{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[34]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBListView) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBListView) ProtoMessage() {}
+
+func (x *PBListView) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[34]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBListView.ProtoReflect.Descriptor instead.
+func (*PBListView) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{34}
+}
+
+func (x *PBListView) GetChildren() []*any.Any {
+	if x != nil {
+		return x.Children
+	}
+	return nil
+}
+
+func (x *PBListView) GetPadding() *any.Any {
+	if x != nil {
+		return x.Padding
+	}
+	return nil
+}
+
+type PBKarte struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Uuid          string     `protobuf:"bytes,1,opt,name=uuid,proto3" json:"uuid,omitempty"`
+	Preview       *any.Any   `protobuf:"bytes,2,opt,name=preview,proto3" json:"preview,omitempty"`
+	GradientColor []*any.Any `protobuf:"bytes,3,rep,name=gradient_color,json=gradientColor,proto3" json:"gradient_color,omitempty"`
+	Title         *any.Any   `protobuf:"bytes,4,opt,name=title,proto3" json:"title,omitempty"`
+}
+
+func (x *PBKarte) Reset() {
+	*x = PBKarte{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[35]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBKarte) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBKarte) ProtoMessage() {}
+
+func (x *PBKarte) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[35]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBKarte.ProtoReflect.Descriptor instead.
+func (*PBKarte) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{35}
+}
+
+func (x *PBKarte) GetUuid() string {
+	if x != nil {
+		return x.Uuid
+	}
+	return ""
+}
+
+func (x *PBKarte) GetPreview() *any.Any {
+	if x != nil {
+		return x.Preview
+	}
+	return nil
+}
+
+func (x *PBKarte) GetGradientColor() []*any.Any {
+	if x != nil {
+		return x.GradientColor
+	}
+	return nil
+}
+
+func (x *PBKarte) GetTitle() *any.Any {
+	if x != nil {
+		return x.Title
+	}
+	return nil
+}
+
+type PBScreenWidth struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Multiplier float32 `protobuf:"fixed32,1,opt,name=multiplier,proto3" json:"multiplier,omitempty"`
+	Offset     float32 `protobuf:"fixed32,2,opt,name=offset,proto3" json:"offset,omitempty"`
+}
+
+func (x *PBScreenWidth) Reset() {
+	*x = PBScreenWidth{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[36]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBScreenWidth) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBScreenWidth) ProtoMessage() {}
+
+func (x *PBScreenWidth) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[36]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBScreenWidth.ProtoReflect.Descriptor instead.
+func (*PBScreenWidth) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{36}
+}
+
+func (x *PBScreenWidth) GetMultiplier() float32 {
+	if x != nil {
+		return x.Multiplier
+	}
+	return 0
+}
+
+func (x *PBScreenWidth) GetOffset() float32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type PBScreenHeight struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Multiplier float32 `protobuf:"fixed32,1,opt,name=multiplier,proto3" json:"multiplier,omitempty"`
+	Offset     float32 `protobuf:"fixed32,2,opt,name=offset,proto3" json:"offset,omitempty"`
+}
+
+func (x *PBScreenHeight) Reset() {
+	*x = PBScreenHeight{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[37]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBScreenHeight) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBScreenHeight) ProtoMessage() {}
+
+func (x *PBScreenHeight) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[37]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBScreenHeight.ProtoReflect.Descriptor instead.
+func (*PBScreenHeight) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{37}
+}
+
+func (x *PBScreenHeight) GetMultiplier() float32 {
+	if x != nil {
+		return x.Multiplier
+	}
+	return 0
+}
+
+func (x *PBScreenHeight) GetOffset() float32 {
+	if x != nil {
+		return x.Offset
+	}
+	return 0
+}
+
+type PBRadiusElliptical struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	X float32 `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
+	Y float32 `protobuf:"fixed32,2,opt,name=y,proto3" json:"y,omitempty"`
+}
+
+func (x *PBRadiusElliptical) Reset() {
+	*x = PBRadiusElliptical{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[38]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBRadiusElliptical) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBRadiusElliptical) ProtoMessage() {}
+
+func (x *PBRadiusElliptical) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[38]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBRadiusElliptical.ProtoReflect.Descriptor instead.
+func (*PBRadiusElliptical) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{38}
+}
+
+func (x *PBRadiusElliptical) GetX() float32 {
+	if x != nil {
+		return x.X
+	}
+	return 0
+}
+
+func (x *PBRadiusElliptical) GetY() float32 {
+	if x != nil {
+		return x.Y
+	}
+	return 0
+}
+
+type PBBoxDecoration struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Color               *any.Any   `protobuf:"bytes,1,opt,name=color,proto3" json:"color,omitempty"`
+	Image               *any.Any   `protobuf:"bytes,2,opt,name=image,proto3" json:"image,omitempty"`
+	Border              *any.Any   `protobuf:"bytes,3,opt,name=border,proto3" json:"border,omitempty"`
+	BorderRadius        *any.Any   `protobuf:"bytes,4,opt,name=border_radius,json=borderRadius,proto3" json:"border_radius,omitempty"`
+	BoxShadow           []*any.Any `protobuf:"bytes,5,rep,name=box_shadow,json=boxShadow,proto3" json:"box_shadow,omitempty"`
+	Gradient            *any.Any   `protobuf:"bytes,6,opt,name=gradient,proto3" json:"gradient,omitempty"`
+	BackgroundBlendMode *any.Any   `protobuf:"bytes,7,opt,name=background_blend_mode,json=backgroundBlendMode,proto3" json:"background_blend_mode,omitempty"`
+	Shape               *any.Any   `protobuf:"bytes,8,opt,name=shape,proto3" json:"shape,omitempty"`
+}
+
+func (x *PBBoxDecoration) Reset() {
+	*x = PBBoxDecoration{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[39]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBoxDecoration) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBoxDecoration) ProtoMessage() {}
+
+func (x *PBBoxDecoration) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[39]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBoxDecoration.ProtoReflect.Descriptor instead.
+func (*PBBoxDecoration) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{39}
+}
+
+func (x *PBBoxDecoration) GetColor() *any.Any {
+	if x != nil {
+		return x.Color
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetImage() *any.Any {
+	if x != nil {
+		return x.Image
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetBorder() *any.Any {
+	if x != nil {
+		return x.Border
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetBorderRadius() *any.Any {
+	if x != nil {
+		return x.BorderRadius
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetBoxShadow() []*any.Any {
+	if x != nil {
+		return x.BoxShadow
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetGradient() *any.Any {
+	if x != nil {
+		return x.Gradient
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetBackgroundBlendMode() *any.Any {
+	if x != nil {
+		return x.BackgroundBlendMode
+	}
+	return nil
+}
+
+func (x *PBBoxDecoration) GetShape() *any.Any {
+	if x != nil {
+		return x.Shape
+	}
+	return nil
+}
+
+type PBBlendMode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	BlendMode EnumBlendMode `protobuf:"varint,1,opt,name=blend_mode,json=blendMode,proto3,enum=lemmerelassal.v1.pbflutter.EnumBlendMode" json:"blend_mode,omitempty"`
+}
+
+func (x *PBBlendMode) Reset() {
+	*x = PBBlendMode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[40]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBlendMode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBlendMode) ProtoMessage() {}
+
+func (x *PBBlendMode) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[40]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBlendMode.ProtoReflect.Descriptor instead.
+func (*PBBlendMode) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{40}
+}
+
+func (x *PBBlendMode) GetBlendMode() EnumBlendMode {
+	if x != nil {
+		return x.BlendMode
+	}
+	return EnumBlendMode_BLEND_MODE_INVALID
+}
+
+type PBTransformTranslate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Offset *any.Any `protobuf:"bytes,1,opt,name=offset,proto3" json:"offset,omitempty"`
+	Child  *any.Any `protobuf:"bytes,2,opt,name=child,proto3" json:"child,omitempty"`
+}
+
+func (x *PBTransformTranslate) Reset() {
+	*x = PBTransformTranslate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[41]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBTransformTranslate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBTransformTranslate) ProtoMessage() {}
+
+func (x *PBTransformTranslate) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[41]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBTransformTranslate.ProtoReflect.Descriptor instead.
+func (*PBTransformTranslate) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{41}
+}
+
+func (x *PBTransformTranslate) GetOffset() *any.Any {
+	if x != nil {
+		return x.Offset
+	}
+	return nil
+}
+
+func (x *PBTransformTranslate) GetChild() *any.Any {
+	if x != nil {
+		return x.Child
+	}
+	return nil
+}
+
+type PBTransformRotate struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Angle     float32  `protobuf:"fixed32,1,opt,name=angle,proto3" json:"angle,omitempty"`
+	Origin    *any.Any `protobuf:"bytes,2,opt,name=origin,proto3" json:"origin,omitempty"`
+	Alignment *any.Any `protobuf:"bytes,3,opt,name=alignment,proto3" json:"alignment,omitempty"`
+	Child     *any.Any `protobuf:"bytes,4,opt,name=child,proto3" json:"child,omitempty"`
+}
+
+func (x *PBTransformRotate) Reset() {
+	*x = PBTransformRotate{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[42]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBTransformRotate) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBTransformRotate) ProtoMessage() {}
+
+func (x *PBTransformRotate) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[42]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBTransformRotate.ProtoReflect.Descriptor instead.
+func (*PBTransformRotate) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{42}
+}
+
+func (x *PBTransformRotate) GetAngle() float32 {
+	if x != nil {
+		return x.Angle
+	}
+	return 0
+}
+
+func (x *PBTransformRotate) GetOrigin() *any.Any {
+	if x != nil {
+		return x.Origin
+	}
+	return nil
+}
+
+func (x *PBTransformRotate) GetAlignment() *any.Any {
+	if x != nil {
+		return x.Alignment
+	}
+	return nil
+}
+
+func (x *PBTransformRotate) GetChild() *any.Any {
+	if x != nil {
+		return x.Child
+	}
+	return nil
+}
+
+type PBTransformScale struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Scale     float32  `protobuf:"fixed32,1,opt,name=scale,proto3" json:"scale,omitempty"`
+	Origin    *any.Any `protobuf:"bytes,2,opt,name=origin,proto3" json:"origin,omitempty"`
+	Alignment *any.Any `protobuf:"bytes,3,opt,name=alignment,proto3" json:"alignment,omitempty"`
+	Child     *any.Any `protobuf:"bytes,4,opt,name=child,proto3" json:"child,omitempty"`
+}
+
+func (x *PBTransformScale) Reset() {
+	*x = PBTransformScale{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[43]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBTransformScale) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBTransformScale) ProtoMessage() {}
+
+func (x *PBTransformScale) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[43]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBTransformScale.ProtoReflect.Descriptor instead.
+func (*PBTransformScale) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{43}
+}
+
+func (x *PBTransformScale) GetScale() float32 {
+	if x != nil {
+		return x.Scale
+	}
+	return 0
+}
+
+func (x *PBTransformScale) GetOrigin() *any.Any {
+	if x != nil {
+		return x.Origin
+	}
+	return nil
+}
+
+func (x *PBTransformScale) GetAlignment() *any.Any {
+	if x != nil {
+		return x.Alignment
+	}
+	return nil
+}
+
+func (x *PBTransformScale) GetChild() *any.Any {
+	if x != nil {
+		return x.Child
+	}
+	return nil
+}
+
+type PBLinearGradient struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Begin     *any.Any   `protobuf:"bytes,1,opt,name=begin,proto3" json:"begin,omitempty"`
+	End       *any.Any   `protobuf:"bytes,2,opt,name=end,proto3" json:"end,omitempty"`
+	Colors    []*any.Any `protobuf:"bytes,3,rep,name=colors,proto3" json:"colors,omitempty"`
+	Stops     []float32  `protobuf:"fixed32,4,rep,packed,name=stops,proto3" json:"stops,omitempty"`
+	TileMode  *any.Any   `protobuf:"bytes,5,opt,name=tile_mode,json=tileMode,proto3" json:"tile_mode,omitempty"`
+	Transform *any.Any   `protobuf:"bytes,6,opt,name=transform,proto3" json:"transform,omitempty"`
+}
+
+func (x *PBLinearGradient) Reset() {
+	*x = PBLinearGradient{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[44]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBLinearGradient) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBLinearGradient) ProtoMessage() {}
+
+func (x *PBLinearGradient) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[44]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBLinearGradient.ProtoReflect.Descriptor instead.
+func (*PBLinearGradient) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{44}
+}
+
+func (x *PBLinearGradient) GetBegin() *any.Any {
+	if x != nil {
+		return x.Begin
+	}
+	return nil
+}
+
+func (x *PBLinearGradient) GetEnd() *any.Any {
+	if x != nil {
+		return x.End
+	}
+	return nil
+}
+
+func (x *PBLinearGradient) GetColors() []*any.Any {
+	if x != nil {
+		return x.Colors
+	}
+	return nil
+}
+
+func (x *PBLinearGradient) GetStops() []float32 {
+	if x != nil {
+		return x.Stops
+	}
+	return nil
+}
+
+func (x *PBLinearGradient) GetTileMode() *any.Any {
+	if x != nil {
+		return x.TileMode
+	}
+	return nil
+}
+
+func (x *PBLinearGradient) GetTransform() *any.Any {
+	if x != nil {
+		return x.Transform
+	}
+	return nil
+}
+
+type PBGradient struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Colors    []*any.Any `protobuf:"bytes,1,rep,name=colors,proto3" json:"colors,omitempty"`
+	Stops     []float32  `protobuf:"fixed32,2,rep,packed,name=stops,proto3" json:"stops,omitempty"`
+	Transform *any.Any   `protobuf:"bytes,3,opt,name=transform,proto3" json:"transform,omitempty"`
+}
+
+func (x *PBGradient) Reset() {
+	*x = PBGradient{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[45]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBGradient) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBGradient) ProtoMessage() {}
+
+func (x *PBGradient) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[45]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBGradient.ProtoReflect.Descriptor instead.
+func (*PBGradient) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{45}
+}
+
+func (x *PBGradient) GetColors() []*any.Any {
+	if x != nil {
+		return x.Colors
+	}
+	return nil
+}
+
+func (x *PBGradient) GetStops() []float32 {
+	if x != nil {
+		return x.Stops
+	}
+	return nil
+}
+
+func (x *PBGradient) GetTransform() *any.Any {
+	if x != nil {
+		return x.Transform
+	}
+	return nil
+}
+
+type PBDecorationImage struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Image *any.Any `protobuf:"bytes,1,opt,name=image,proto3" json:"image,omitempty"`
+	//        this.onError,
+	ColorFilter *any.Any `protobuf:"bytes,2,opt,name=color_filter,json=colorFilter,proto3" json:"color_filter,omitempty"`
+	Fit         *any.Any `protobuf:"bytes,3,opt,name=fit,proto3" json:"fit,omitempty"`
+	Alignment   *any.Any `protobuf:"bytes,4,opt,name=alignment,proto3" json:"alignment,omitempty"`
+	CenterSlice *any.Any `protobuf:"bytes,5,opt,name=centerSlice,proto3" json:"centerSlice,omitempty"`
+	Repeat      *any.Any `protobuf:"bytes,6,opt,name=repeat,proto3" json:"repeat,omitempty"` //    google.protobuf.Any matchTextDirection = 7;
+}
+
+func (x *PBDecorationImage) Reset() {
+	*x = PBDecorationImage{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[46]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBDecorationImage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBDecorationImage) ProtoMessage() {}
+
+func (x *PBDecorationImage) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[46]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBDecorationImage.ProtoReflect.Descriptor instead.
+func (*PBDecorationImage) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{46}
+}
+
+func (x *PBDecorationImage) GetImage() *any.Any {
+	if x != nil {
+		return x.Image
+	}
+	return nil
+}
+
+func (x *PBDecorationImage) GetColorFilter() *any.Any {
+	if x != nil {
+		return x.ColorFilter
+	}
+	return nil
+}
+
+func (x *PBDecorationImage) GetFit() *any.Any {
+	if x != nil {
+		return x.Fit
+	}
+	return nil
+}
+
+func (x *PBDecorationImage) GetAlignment() *any.Any {
+	if x != nil {
+		return x.Alignment
+	}
+	return nil
+}
+
+func (x *PBDecorationImage) GetCenterSlice() *any.Any {
+	if x != nil {
+		return x.CenterSlice
+	}
+	return nil
+}
+
+func (x *PBDecorationImage) GetRepeat() *any.Any {
+	if x != nil {
+		return x.Repeat
+	}
+	return nil
+}
+
+type PBNetworkImage struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Url     string            `protobuf:"bytes,1,opt,name=url,proto3" json:"url,omitempty"`
+	Scale   float32           `protobuf:"fixed32,2,opt,name=scale,proto3" json:"scale,omitempty"`
+	Headers map[string]string `protobuf:"bytes,3,rep,name=headers,proto3" json:"headers,omitempty" protobuf_key:"bytes,1,opt,name=key,proto3" protobuf_val:"bytes,2,opt,name=value,proto3"`
+}
+
+func (x *PBNetworkImage) Reset() {
+	*x = PBNetworkImage{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[47]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBNetworkImage) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBNetworkImage) ProtoMessage() {}
+
+func (x *PBNetworkImage) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[47]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBNetworkImage.ProtoReflect.Descriptor instead.
+func (*PBNetworkImage) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{47}
+}
+
+func (x *PBNetworkImage) GetUrl() string {
+	if x != nil {
+		return x.Url
+	}
+	return ""
+}
+
+func (x *PBNetworkImage) GetScale() float32 {
+	if x != nil {
+		return x.Scale
+	}
+	return 0
+}
+
+func (x *PBNetworkImage) GetHeaders() map[string]string {
+	if x != nil {
+		return x.Headers
+	}
+	return nil
+}
+
+type PBBoxFit struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	BoxFit EnumBoxFit `protobuf:"varint,1,opt,name=box_fit,json=boxFit,proto3,enum=lemmerelassal.v1.pbflutter.EnumBoxFit" json:"box_fit,omitempty"`
+}
+
+func (x *PBBoxFit) Reset() {
+	*x = PBBoxFit{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[48]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBoxFit) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBoxFit) ProtoMessage() {}
+
+func (x *PBBoxFit) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[48]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBoxFit.ProtoReflect.Descriptor instead.
+func (*PBBoxFit) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{48}
+}
+
+func (x *PBBoxFit) GetBoxFit() EnumBoxFit {
+	if x != nil {
+		return x.BoxFit
+	}
+	return EnumBoxFit_BOX_FIT_INVALID
+}
+
+type PBAlignment struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	X float32 `protobuf:"fixed32,1,opt,name=x,proto3" json:"x,omitempty"`
+	Y float32 `protobuf:"fixed32,2,opt,name=y,proto3" json:"y,omitempty"`
+}
+
+func (x *PBAlignment) Reset() {
+	*x = PBAlignment{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[49]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBAlignment) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBAlignment) ProtoMessage() {}
+
+func (x *PBAlignment) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[49]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBAlignment.ProtoReflect.Descriptor instead.
+func (*PBAlignment) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{49}
+}
+
+func (x *PBAlignment) GetX() float32 {
+	if x != nil {
+		return x.X
+	}
+	return 0
+}
+
+func (x *PBAlignment) GetY() float32 {
+	if x != nil {
+		return x.Y
+	}
+	return 0
+}
+
+type PBImageRepeat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Repeat EnumImageRepeat `protobuf:"varint,1,opt,name=repeat,proto3,enum=lemmerelassal.v1.pbflutter.EnumImageRepeat" json:"repeat,omitempty"`
+}
+
+func (x *PBImageRepeat) Reset() {
+	*x = PBImageRepeat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[50]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBImageRepeat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBImageRepeat) ProtoMessage() {}
+
+func (x *PBImageRepeat) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[50]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBImageRepeat.ProtoReflect.Descriptor instead.
+func (*PBImageRepeat) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{50}
+}
+
+func (x *PBImageRepeat) GetRepeat() EnumImageRepeat {
+	if x != nil {
+		return x.Repeat
+	}
+	return EnumImageRepeat_IMAGE_REPEAT_INVALID
+}
+
+type PBBoxShape struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	BoxShape EnumBoxShape `protobuf:"varint,1,opt,name=box_shape,json=boxShape,proto3,enum=lemmerelassal.v1.pbflutter.EnumBoxShape" json:"box_shape,omitempty"`
+}
+
+func (x *PBBoxShape) Reset() {
+	*x = PBBoxShape{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[51]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBoxShape) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBoxShape) ProtoMessage() {}
+
+func (x *PBBoxShape) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[51]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBoxShape.ProtoReflect.Descriptor instead.
+func (*PBBoxShape) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{51}
+}
+
+func (x *PBBoxShape) GetBoxShape() EnumBoxShape {
+	if x != nil {
+		return x.BoxShape
+	}
+	return EnumBoxShape_BOX_SHAPE_INVALID
+}
+
+type PBTileMode struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TileMode EnumTileMode `protobuf:"varint,1,opt,name=tile_mode,json=tileMode,proto3,enum=lemmerelassal.v1.pbflutter.EnumTileMode" json:"tile_mode,omitempty"`
+}
+
+func (x *PBTileMode) Reset() {
+	*x = PBTileMode{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[52]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBTileMode) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBTileMode) ProtoMessage() {}
+
+func (x *PBTileMode) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[52]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBTileMode.ProtoReflect.Descriptor instead.
+func (*PBTileMode) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{52}
+}
+
+func (x *PBTileMode) GetTileMode() EnumTileMode {
+	if x != nil {
+		return x.TileMode
+	}
+	return EnumTileMode_TILE_MODE_INVALID
+}
+
+type PBBorderRadius struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TopLeft     *any.Any `protobuf:"bytes,1,opt,name=top_left,json=topLeft,proto3" json:"top_left,omitempty"`
+	TopRight    *any.Any `protobuf:"bytes,2,opt,name=top_right,json=topRight,proto3" json:"top_right,omitempty"`
+	BottomLeft  *any.Any `protobuf:"bytes,3,opt,name=bottom_left,json=bottomLeft,proto3" json:"bottom_left,omitempty"`
+	BottomRight *any.Any `protobuf:"bytes,4,opt,name=bottom_right,json=bottomRight,proto3" json:"bottom_right,omitempty"`
+}
+
+func (x *PBBorderRadius) Reset() {
+	*x = PBBorderRadius{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[53]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBorderRadius) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBorderRadius) ProtoMessage() {}
+
+func (x *PBBorderRadius) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[53]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBorderRadius.ProtoReflect.Descriptor instead.
+func (*PBBorderRadius) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{53}
+}
+
+func (x *PBBorderRadius) GetTopLeft() *any.Any {
+	if x != nil {
+		return x.TopLeft
+	}
+	return nil
+}
+
+func (x *PBBorderRadius) GetTopRight() *any.Any {
+	if x != nil {
+		return x.TopRight
+	}
+	return nil
+}
+
+func (x *PBBorderRadius) GetBottomLeft() *any.Any {
+	if x != nil {
+		return x.BottomLeft
+	}
+	return nil
+}
+
+func (x *PBBorderRadius) GetBottomRight() *any.Any {
+	if x != nil {
+		return x.BottomRight
+	}
+	return nil
+}
+
+type PBBorderRadiusAll struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Radius *any.Any `protobuf:"bytes,1,opt,name=radius,proto3" json:"radius,omitempty"`
+}
+
+func (x *PBBorderRadiusAll) Reset() {
+	*x = PBBorderRadiusAll{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[54]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBorderRadiusAll) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBorderRadiusAll) ProtoMessage() {}
+
+func (x *PBBorderRadiusAll) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[54]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBorderRadiusAll.ProtoReflect.Descriptor instead.
+func (*PBBorderRadiusAll) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{54}
+}
+
+func (x *PBBorderRadiusAll) GetRadius() *any.Any {
+	if x != nil {
+		return x.Radius
+	}
+	return nil
+}
+
+type PBBorderRadiusOnly struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	TopLeft     *any.Any `protobuf:"bytes,1,opt,name=top_left,json=topLeft,proto3" json:"top_left,omitempty"`
+	TopRight    *any.Any `protobuf:"bytes,2,opt,name=top_right,json=topRight,proto3" json:"top_right,omitempty"`
+	BottomLeft  *any.Any `protobuf:"bytes,3,opt,name=bottom_left,json=bottomLeft,proto3" json:"bottom_left,omitempty"`
+	BottomRight *any.Any `protobuf:"bytes,4,opt,name=bottom_right,json=bottomRight,proto3" json:"bottom_right,omitempty"`
+}
+
+func (x *PBBorderRadiusOnly) Reset() {
+	*x = PBBorderRadiusOnly{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[55]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBorderRadiusOnly) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBorderRadiusOnly) ProtoMessage() {}
+
+func (x *PBBorderRadiusOnly) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[55]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBorderRadiusOnly.ProtoReflect.Descriptor instead.
+func (*PBBorderRadiusOnly) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{55}
+}
+
+func (x *PBBorderRadiusOnly) GetTopLeft() *any.Any {
+	if x != nil {
+		return x.TopLeft
+	}
+	return nil
+}
+
+func (x *PBBorderRadiusOnly) GetTopRight() *any.Any {
+	if x != nil {
+		return x.TopRight
+	}
+	return nil
+}
+
+func (x *PBBorderRadiusOnly) GetBottomLeft() *any.Any {
+	if x != nil {
+		return x.BottomLeft
+	}
+	return nil
+}
+
+func (x *PBBorderRadiusOnly) GetBottomRight() *any.Any {
+	if x != nil {
+		return x.BottomRight
+	}
+	return nil
+}
+
+type PBFloat struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Value float32 `protobuf:"fixed32,1,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (x *PBFloat) Reset() {
+	*x = PBFloat{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[56]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBFloat) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBFloat) ProtoMessage() {}
+
+func (x *PBFloat) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[56]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBFloat.ProtoReflect.Descriptor instead.
+func (*PBFloat) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{56}
+}
+
+func (x *PBFloat) GetValue() float32 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+type PBInt struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Value int32 `protobuf:"varint,1,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (x *PBInt) Reset() {
+	*x = PBInt{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[57]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBInt) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBInt) ProtoMessage() {}
+
+func (x *PBInt) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[57]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBInt.ProtoReflect.Descriptor instead.
+func (*PBInt) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{57}
+}
+
+func (x *PBInt) GetValue() int32 {
+	if x != nil {
+		return x.Value
+	}
+	return 0
+}
+
+type PBString struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Value string `protobuf:"bytes,1,opt,name=value,proto3" json:"value,omitempty"`
+}
+
+func (x *PBString) Reset() {
+	*x = PBString{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[58]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBString) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBString) ProtoMessage() {}
+
+func (x *PBString) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[58]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBString.ProtoReflect.Descriptor instead.
+func (*PBString) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{58}
+}
+
+func (x *PBString) GetValue() string {
+	if x != nil {
+		return x.Value
+	}
+	return ""
+}
+
+type PBBorderAll struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Width *any.Any `protobuf:"bytes,1,opt,name=width,proto3" json:"width,omitempty"`
+	Color *any.Any `protobuf:"bytes,2,opt,name=color,proto3" json:"color,omitempty"`
+	Style *any.Any `protobuf:"bytes,3,opt,name=style,proto3" json:"style,omitempty"`
+}
+
+func (x *PBBorderAll) Reset() {
+	*x = PBBorderAll{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[59]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBorderAll) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBorderAll) ProtoMessage() {}
+
+func (x *PBBorderAll) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[59]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBorderAll.ProtoReflect.Descriptor instead.
+func (*PBBorderAll) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{59}
+}
+
+func (x *PBBorderAll) GetWidth() *any.Any {
+	if x != nil {
+		return x.Width
+	}
+	return nil
+}
+
+func (x *PBBorderAll) GetColor() *any.Any {
+	if x != nil {
+		return x.Color
+	}
+	return nil
+}
+
+func (x *PBBorderAll) GetStyle() *any.Any {
+	if x != nil {
+		return x.Style
+	}
+	return nil
+}
+
+type PBBorderStyle struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	BorderStyle EnumBorderStyle `protobuf:"varint,1,opt,name=border_style,json=borderStyle,proto3,enum=lemmerelassal.v1.pbflutter.EnumBorderStyle" json:"border_style,omitempty"`
+}
+
+func (x *PBBorderStyle) Reset() {
+	*x = PBBorderStyle{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[60]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBorderStyle) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBorderStyle) ProtoMessage() {}
+
+func (x *PBBorderStyle) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[60]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBorderStyle.ProtoReflect.Descriptor instead.
+func (*PBBorderStyle) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{60}
+}
+
+func (x *PBBorderStyle) GetBorderStyle() EnumBorderStyle {
+	if x != nil {
+		return x.BorderStyle
+	}
+	return EnumBorderStyle_BORDER_STYLE_INVALID
+}
+
+type PBBoxShadow struct {
+	state         protoimpl.MessageState
+	sizeCache     protoimpl.SizeCache
+	unknownFields protoimpl.UnknownFields
+
+	Color        *any.Any `protobuf:"bytes,1,opt,name=color,proto3" json:"color,omitempty"`
+	Offset       *any.Any `protobuf:"bytes,2,opt,name=offset,proto3" json:"offset,omitempty"`
+	BlurRadius   *any.Any `protobuf:"bytes,3,opt,name=blur_radius,json=blurRadius,proto3" json:"blur_radius,omitempty"`
+	SpreadRadius *any.Any `protobuf:"bytes,4,opt,name=spread_radius,json=spreadRadius,proto3" json:"spread_radius,omitempty"`
+}
+
+func (x *PBBoxShadow) Reset() {
+	*x = PBBoxShadow{}
+	if protoimpl.UnsafeEnabled {
+		mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[61]
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		ms.StoreMessageInfo(mi)
+	}
+}
+
+func (x *PBBoxShadow) String() string {
+	return protoimpl.X.MessageStringOf(x)
+}
+
+func (*PBBoxShadow) ProtoMessage() {}
+
+func (x *PBBoxShadow) ProtoReflect() protoreflect.Message {
+	mi := &file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[61]
+	if protoimpl.UnsafeEnabled && x != nil {
+		ms := protoimpl.X.MessageStateOf(protoimpl.Pointer(x))
+		if ms.LoadMessageInfo() == nil {
+			ms.StoreMessageInfo(mi)
+		}
+		return ms
+	}
+	return mi.MessageOf(x)
+}
+
+// Deprecated: Use PBBoxShadow.ProtoReflect.Descriptor instead.
+func (*PBBoxShadow) Descriptor() ([]byte, []int) {
+	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP(), []int{61}
+}
+
+func (x *PBBoxShadow) GetColor() *any.Any {
+	if x != nil {
+		return x.Color
+	}
+	return nil
+}
+
+func (x *PBBoxShadow) GetOffset() *any.Any {
+	if x != nil {
+		return x.Offset
+	}
+	return nil
+}
+
+func (x *PBBoxShadow) GetBlurRadius() *any.Any {
+	if x != nil {
+		return x.BlurRadius
+	}
+	return nil
+}
+
+func (x *PBBoxShadow) GetSpreadRadius() *any.Any {
+	if x != nil {
+		return x.SpreadRadius
+	}
+	return nil
+}
+
 var File_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto protoreflect.FileDescriptor
 
 var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDesc = []byte{
@@ -2064,18 +4359,44 @@ var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDesc = []by
 	0x64, 0x69, 0x75, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x02, 0x52, 0x0a, 0x62, 0x6c, 0x75, 0x72,
 	0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x22, 0x26, 0x0a, 0x08, 0x50, 0x42, 0x4f, 0x66, 0x66, 0x73,
 	0x65, 0x74, 0x12, 0x0c, 0x0a, 0x01, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x02, 0x52, 0x01, 0x78,
-	0x12, 0x0c, 0x0a, 0x01, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x01, 0x79, 0x22, 0xa6,
-	0x01, 0x0a, 0x0b, 0x50, 0x42, 0x54, 0x65, 0x78, 0x74, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x12, 0x1f,
+	0x12, 0x0c, 0x0a, 0x01, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x01, 0x79, 0x22, 0xc6,
+	0x04, 0x0a, 0x0b, 0x50, 0x42, 0x54, 0x65, 0x78, 0x74, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x12, 0x1f,
 	0x0a, 0x0b, 0x66, 0x6f, 0x6e, 0x74, 0x5f, 0x66, 0x61, 0x6d, 0x69, 0x6c, 0x79, 0x18, 0x01, 0x20,
 	0x01, 0x28, 0x09, 0x52, 0x0a, 0x66, 0x6f, 0x6e, 0x74, 0x46, 0x61, 0x6d, 0x69, 0x6c, 0x79, 0x12,
 	0x2a, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
 	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
-	0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x1a, 0x0a, 0x08, 0x66,
-	0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x02, 0x52, 0x08, 0x66,
-	0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x2e, 0x0a, 0x07, 0x73, 0x68, 0x61, 0x64, 0x6f,
-	0x77, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
-	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x07,
-	0x73, 0x68, 0x61, 0x64, 0x6f, 0x77, 0x73, 0x22, 0x36, 0x0a, 0x06, 0x50, 0x42, 0x53, 0x69, 0x7a,
+	0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x1b, 0x0a, 0x09, 0x66,
+	0x6f, 0x6e, 0x74, 0x5f, 0x73, 0x69, 0x7a, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x02, 0x52, 0x08,
+	0x66, 0x6f, 0x6e, 0x74, 0x53, 0x69, 0x7a, 0x65, 0x12, 0x2e, 0x0a, 0x07, 0x73, 0x68, 0x61, 0x64,
+	0x6f, 0x77, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52,
+	0x07, 0x73, 0x68, 0x61, 0x64, 0x6f, 0x77, 0x73, 0x12, 0x1f, 0x0a, 0x0b, 0x66, 0x6f, 0x6e, 0x74,
+	0x5f, 0x77, 0x65, 0x69, 0x67, 0x68, 0x74, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0d, 0x52, 0x0a, 0x66,
+	0x6f, 0x6e, 0x74, 0x57, 0x65, 0x69, 0x67, 0x68, 0x74, 0x12, 0x46, 0x0a, 0x0a, 0x66, 0x6f, 0x6e,
+	0x74, 0x5f, 0x73, 0x74, 0x79, 0x6c, 0x65, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x27, 0x2e,
+	0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2e, 0x76, 0x31,
+	0x2e, 0x70, 0x62, 0x66, 0x6c, 0x75, 0x74, 0x74, 0x65, 0x72, 0x2e, 0x50, 0x42, 0x46, 0x6f, 0x6e,
+	0x74, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x52, 0x09, 0x66, 0x6f, 0x6e, 0x74, 0x53, 0x74, 0x79, 0x6c,
+	0x65, 0x12, 0x16, 0x0a, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x18, 0x07, 0x20, 0x01, 0x28,
+	0x0d, 0x52, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x12, 0x34, 0x0a, 0x0a, 0x64, 0x65, 0x63,
+	0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x41, 0x6e, 0x79, 0x52, 0x0a, 0x64, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12,
+	0x3f, 0x0a, 0x10, 0x64, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x18, 0x09, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52,
+	0x0f, 0x64, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x43, 0x6f, 0x6c, 0x6f, 0x72,
+	0x12, 0x3d, 0x0a, 0x0f, 0x64, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x5f, 0x74,
+	0x79, 0x6c, 0x65, 0x18, 0x0a, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52,
+	0x0e, 0x64, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x54, 0x79, 0x6c, 0x65, 0x12,
+	0x34, 0x0a, 0x0a, 0x66, 0x6f, 0x72, 0x65, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x18, 0x0b, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0a, 0x66, 0x6f, 0x72, 0x65, 0x67,
+	0x72, 0x6f, 0x75, 0x6e, 0x64, 0x12, 0x30, 0x0a, 0x14, 0x66, 0x6f, 0x6e, 0x74, 0x5f, 0x66, 0x61,
+	0x6d, 0x69, 0x6c, 0x79, 0x5f, 0x66, 0x61, 0x6c, 0x6c, 0x62, 0x61, 0x63, 0x6b, 0x18, 0x0c, 0x20,
+	0x03, 0x28, 0x09, 0x52, 0x12, 0x66, 0x6f, 0x6e, 0x74, 0x46, 0x61, 0x6d, 0x69, 0x6c, 0x79, 0x46,
+	0x61, 0x6c, 0x6c, 0x62, 0x61, 0x63, 0x6b, 0x22, 0x36, 0x0a, 0x06, 0x50, 0x42, 0x53, 0x69, 0x7a,
 	0x65, 0x12, 0x14, 0x0a, 0x05, 0x77, 0x69, 0x64, 0x74, 0x68, 0x18, 0x01, 0x20, 0x01, 0x28, 0x02,
 	0x52, 0x05, 0x77, 0x69, 0x64, 0x74, 0x68, 0x12, 0x16, 0x0a, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68,
 	0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x06, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x22,
@@ -2228,7 +4549,7 @@ var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDesc = []by
 	0x12, 0x1d, 0x0a, 0x0a, 0x6d, 0x69, 0x6e, 0x5f, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x18, 0x03,
 	0x20, 0x01, 0x28, 0x02, 0x52, 0x09, 0x6d, 0x69, 0x6e, 0x48, 0x65, 0x69, 0x67, 0x68, 0x74, 0x12,
 	0x1d, 0x0a, 0x0a, 0x6d, 0x61, 0x78, 0x5f, 0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x18, 0x04, 0x20,
-	0x01, 0x28, 0x02, 0x52, 0x09, 0x6d, 0x61, 0x78, 0x48, 0x65, 0x69, 0x67, 0x68, 0x74, 0x22, 0xbf,
+	0x01, 0x28, 0x02, 0x52, 0x09, 0x6d, 0x61, 0x78, 0x48, 0x65, 0x69, 0x67, 0x68, 0x74, 0x22, 0xf5,
 	0x01, 0x0a, 0x0b, 0x50, 0x42, 0x43, 0x6f, 0x6e, 0x74, 0x61, 0x69, 0x6e, 0x65, 0x72, 0x12, 0x2a,
 	0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e,
 	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
@@ -2241,25 +4562,335 @@ var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDesc = []by
 	0x69, 0x67, 0x68, 0x74, 0x12, 0x2a, 0x0a, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x18, 0x04, 0x20,
 	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
 	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64,
-	0x22, 0x62, 0x0a, 0x0c, 0x50, 0x42, 0x43, 0x6f, 0x6c, 0x6f, 0x72, 0x54, 0x77, 0x65, 0x65, 0x6e,
-	0x12, 0x2a, 0x0a, 0x05, 0x62, 0x65, 0x67, 0x69, 0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x12, 0x34, 0x0a, 0x0a, 0x64, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x18, 0x05,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0a, 0x64, 0x65, 0x63, 0x6f,
+	0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x22, 0x62, 0x0a, 0x0c, 0x50, 0x42, 0x43, 0x6f, 0x6c, 0x6f,
+	0x72, 0x54, 0x77, 0x65, 0x65, 0x6e, 0x12, 0x2a, 0x0a, 0x05, 0x62, 0x65, 0x67, 0x69, 0x6e, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x62, 0x65, 0x67,
+	0x69, 0x6e, 0x12, 0x26, 0x0a, 0x03, 0x65, 0x6e, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
 	0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
-	0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x62, 0x65, 0x67, 0x69, 0x6e, 0x12, 0x26, 0x0a, 0x03,
-	0x65, 0x6e, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
-	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52,
-	0x03, 0x65, 0x6e, 0x64, 0x22, 0x4f, 0x0a, 0x14, 0x50, 0x42, 0x41, 0x6e, 0x69, 0x6d, 0x61, 0x74,
-	0x65, 0x64, 0x42, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x12, 0x37, 0x0a, 0x0c,
-	0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x5f, 0x74, 0x77, 0x65, 0x65, 0x6e, 0x73, 0x18, 0x01, 0x20, 0x03,
+	0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x03, 0x65, 0x6e, 0x64, 0x22, 0x4f, 0x0a, 0x14, 0x50, 0x42,
+	0x41, 0x6e, 0x69, 0x6d, 0x61, 0x74, 0x65, 0x64, 0x42, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75,
+	0x6e, 0x64, 0x12, 0x37, 0x0a, 0x0c, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x5f, 0x74, 0x77, 0x65, 0x65,
+	0x6e, 0x73, 0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0b,
+	0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x54, 0x77, 0x65, 0x65, 0x6e, 0x73, 0x22, 0x0e, 0x0a, 0x0c, 0x50,
+	0x42, 0x44, 0x65, 0x74, 0x61, 0x69, 0x6c, 0x56, 0x69, 0x65, 0x77, 0x22, 0x38, 0x0a, 0x0a, 0x50,
+	0x42, 0x54, 0x61, 0x62, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x2a, 0x0a, 0x05, 0x74, 0x69, 0x74,
+	0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05,
+	0x74, 0x69, 0x74, 0x6c, 0x65, 0x22, 0x6e, 0x0a, 0x0a, 0x50, 0x42, 0x4c, 0x69, 0x73, 0x74, 0x56,
+	0x69, 0x65, 0x77, 0x12, 0x30, 0x0a, 0x08, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x72, 0x65, 0x6e, 0x18,
+	0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x08, 0x63, 0x68, 0x69,
+	0x6c, 0x64, 0x72, 0x65, 0x6e, 0x12, 0x2e, 0x0a, 0x07, 0x70, 0x61, 0x64, 0x64, 0x69, 0x6e, 0x67,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x07, 0x70, 0x61,
+	0x64, 0x64, 0x69, 0x6e, 0x67, 0x22, 0xb6, 0x01, 0x0a, 0x07, 0x50, 0x42, 0x4b, 0x61, 0x72, 0x74,
+	0x65, 0x12, 0x12, 0x0a, 0x04, 0x75, 0x75, 0x69, 0x64, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52,
+	0x04, 0x75, 0x75, 0x69, 0x64, 0x12, 0x2e, 0x0a, 0x07, 0x70, 0x72, 0x65, 0x76, 0x69, 0x65, 0x77,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x07, 0x70, 0x72,
+	0x65, 0x76, 0x69, 0x65, 0x77, 0x12, 0x3b, 0x0a, 0x0e, 0x67, 0x72, 0x61, 0x64, 0x69, 0x65, 0x6e,
+	0x74, 0x5f, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x41, 0x6e, 0x79, 0x52, 0x0d, 0x67, 0x72, 0x61, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x43, 0x6f, 0x6c,
+	0x6f, 0x72, 0x12, 0x2a, 0x0a, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x74, 0x69, 0x74, 0x6c, 0x65, 0x22, 0x47,
+	0x0a, 0x0d, 0x50, 0x42, 0x53, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x57, 0x69, 0x64, 0x74, 0x68, 0x12,
+	0x1e, 0x0a, 0x0a, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x69, 0x65, 0x72, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x02, 0x52, 0x0a, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x69, 0x65, 0x72, 0x12,
+	0x16, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52,
+	0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x22, 0x48, 0x0a, 0x0e, 0x50, 0x42, 0x53, 0x63, 0x72,
+	0x65, 0x65, 0x6e, 0x48, 0x65, 0x69, 0x67, 0x68, 0x74, 0x12, 0x1e, 0x0a, 0x0a, 0x6d, 0x75, 0x6c,
+	0x74, 0x69, 0x70, 0x6c, 0x69, 0x65, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x02, 0x52, 0x0a, 0x6d,
+	0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x69, 0x65, 0x72, 0x12, 0x16, 0x0a, 0x06, 0x6f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65,
+	0x74, 0x22, 0x30, 0x0a, 0x12, 0x50, 0x42, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x45, 0x6c, 0x6c,
+	0x69, 0x70, 0x74, 0x69, 0x63, 0x61, 0x6c, 0x12, 0x0c, 0x0a, 0x01, 0x78, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x02, 0x52, 0x01, 0x78, 0x12, 0x0c, 0x0a, 0x01, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02,
+	0x52, 0x01, 0x79, 0x22, 0xaf, 0x03, 0x0a, 0x0f, 0x50, 0x42, 0x42, 0x6f, 0x78, 0x44, 0x65, 0x63,
+	0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x12, 0x2a, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x12, 0x2a, 0x0a, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x18, 0x02, 0x20, 0x01,
 	0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
-	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0b, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x54,
-	0x77, 0x65, 0x65, 0x6e, 0x73, 0x2a, 0x76, 0x0a, 0x0e, 0x50, 0x42, 0x43, 0x6f, 0x6c, 0x6c, 0x61,
-	0x70, 0x73, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x19, 0x0a, 0x15, 0x43, 0x4f, 0x4c, 0x4c, 0x41,
-	0x50, 0x53, 0x45, 0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c, 0x49, 0x44,
-	0x10, 0x00, 0x12, 0x1a, 0x0a, 0x16, 0x43, 0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53, 0x45, 0x5f, 0x4d,
-	0x4f, 0x44, 0x45, 0x5f, 0x50, 0x41, 0x52, 0x41, 0x4c, 0x4c, 0x41, 0x58, 0x10, 0x01, 0x12, 0x15,
-	0x0a, 0x11, 0x43, 0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53, 0x45, 0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f,
-	0x50, 0x49, 0x4e, 0x10, 0x02, 0x12, 0x16, 0x0a, 0x12, 0x43, 0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53,
-	0x45, 0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x03, 0x42, 0x3f, 0x5a,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x12,
+	0x2c, 0x0a, 0x06, 0x62, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x06, 0x62, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x12, 0x39, 0x0a,
+	0x0d, 0x62, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x5f, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0c, 0x62, 0x6f, 0x72, 0x64,
+	0x65, 0x72, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x12, 0x33, 0x0a, 0x0a, 0x62, 0x6f, 0x78, 0x5f,
+	0x73, 0x68, 0x61, 0x64, 0x6f, 0x77, 0x18, 0x05, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41,
+	0x6e, 0x79, 0x52, 0x09, 0x62, 0x6f, 0x78, 0x53, 0x68, 0x61, 0x64, 0x6f, 0x77, 0x12, 0x30, 0x0a,
+	0x08, 0x67, 0x72, 0x61, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x08, 0x67, 0x72, 0x61, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x12,
+	0x48, 0x0a, 0x15, 0x62, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64, 0x5f, 0x62, 0x6c,
+	0x65, 0x6e, 0x64, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x18, 0x07, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14,
+	0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66,
+	0x2e, 0x41, 0x6e, 0x79, 0x52, 0x13, 0x62, 0x61, 0x63, 0x6b, 0x67, 0x72, 0x6f, 0x75, 0x6e, 0x64,
+	0x42, 0x6c, 0x65, 0x6e, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x2a, 0x0a, 0x05, 0x73, 0x68, 0x61,
+	0x70, 0x65, 0x18, 0x08, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05,
+	0x73, 0x68, 0x61, 0x70, 0x65, 0x22, 0x57, 0x0a, 0x0b, 0x50, 0x42, 0x42, 0x6c, 0x65, 0x6e, 0x64,
+	0x4d, 0x6f, 0x64, 0x65, 0x12, 0x48, 0x0a, 0x0a, 0x62, 0x6c, 0x65, 0x6e, 0x64, 0x5f, 0x6d, 0x6f,
+	0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x29, 0x2e, 0x6c, 0x65, 0x6d, 0x6d, 0x65,
+	0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x70, 0x62, 0x66, 0x6c,
+	0x75, 0x74, 0x74, 0x65, 0x72, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x42, 0x6c, 0x65, 0x6e, 0x64, 0x4d,
+	0x6f, 0x64, 0x65, 0x52, 0x09, 0x62, 0x6c, 0x65, 0x6e, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x22, 0x70,
+	0x0a, 0x14, 0x50, 0x42, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d, 0x54, 0x72, 0x61,
+	0x6e, 0x73, 0x6c, 0x61, 0x74, 0x65, 0x12, 0x2c, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x06, 0x6f, 0x66,
+	0x66, 0x73, 0x65, 0x74, 0x12, 0x2a, 0x0a, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x18, 0x02, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64,
+	0x22, 0xb7, 0x01, 0x0a, 0x11, 0x50, 0x42, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d,
+	0x52, 0x6f, 0x74, 0x61, 0x74, 0x65, 0x12, 0x14, 0x0a, 0x05, 0x61, 0x6e, 0x67, 0x6c, 0x65, 0x18,
+	0x01, 0x20, 0x01, 0x28, 0x02, 0x52, 0x05, 0x61, 0x6e, 0x67, 0x6c, 0x65, 0x12, 0x2c, 0x0a, 0x06,
+	0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41,
+	0x6e, 0x79, 0x52, 0x06, 0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x12, 0x32, 0x0a, 0x09, 0x61, 0x6c,
+	0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x41, 0x6e, 0x79, 0x52, 0x09, 0x61, 0x6c, 0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2a,
+	0x0a, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64, 0x22, 0xb6, 0x01, 0x0a, 0x10, 0x50,
+	0x42, 0x54, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d, 0x53, 0x63, 0x61, 0x6c, 0x65, 0x12,
+	0x14, 0x0a, 0x05, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x02, 0x52, 0x05,
+	0x73, 0x63, 0x61, 0x6c, 0x65, 0x12, 0x2c, 0x0a, 0x06, 0x6f, 0x72, 0x69, 0x67, 0x69, 0x6e, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x06, 0x6f, 0x72, 0x69,
+	0x67, 0x69, 0x6e, 0x12, 0x32, 0x0a, 0x09, 0x61, 0x6c, 0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e, 0x74,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x09, 0x61, 0x6c,
+	0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x2a, 0x0a, 0x05, 0x63, 0x68, 0x69, 0x6c, 0x64,
+	0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x68,
+	0x69, 0x6c, 0x64, 0x22, 0x91, 0x02, 0x0a, 0x10, 0x50, 0x42, 0x4c, 0x69, 0x6e, 0x65, 0x61, 0x72,
+	0x47, 0x72, 0x61, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x12, 0x2a, 0x0a, 0x05, 0x62, 0x65, 0x67, 0x69,
+	0x6e, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x62,
+	0x65, 0x67, 0x69, 0x6e, 0x12, 0x26, 0x0a, 0x03, 0x65, 0x6e, 0x64, 0x18, 0x02, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x03, 0x65, 0x6e, 0x64, 0x12, 0x2c, 0x0a, 0x06,
+	0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67,
+	0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41,
+	0x6e, 0x79, 0x52, 0x06, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74,
+	0x6f, 0x70, 0x73, 0x18, 0x04, 0x20, 0x03, 0x28, 0x02, 0x52, 0x05, 0x73, 0x74, 0x6f, 0x70, 0x73,
+	0x12, 0x31, 0x0a, 0x09, 0x74, 0x69, 0x6c, 0x65, 0x5f, 0x6d, 0x6f, 0x64, 0x65, 0x18, 0x05, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x08, 0x74, 0x69, 0x6c, 0x65, 0x4d,
+	0x6f, 0x64, 0x65, 0x12, 0x32, 0x0a, 0x09, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d,
+	0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x09, 0x74, 0x72,
+	0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d, 0x22, 0x84, 0x01, 0x0a, 0x0a, 0x50, 0x42, 0x47, 0x72,
+	0x61, 0x64, 0x69, 0x65, 0x6e, 0x74, 0x12, 0x2c, 0x0a, 0x06, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x73,
+	0x18, 0x01, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x06, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x73, 0x12, 0x14, 0x0a, 0x05, 0x73, 0x74, 0x6f, 0x70, 0x73, 0x18, 0x02, 0x20,
+	0x03, 0x28, 0x02, 0x52, 0x05, 0x73, 0x74, 0x6f, 0x70, 0x73, 0x12, 0x32, 0x0a, 0x09, 0x74, 0x72,
+	0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x41, 0x6e, 0x79, 0x52, 0x09, 0x74, 0x72, 0x61, 0x6e, 0x73, 0x66, 0x6f, 0x72, 0x6d, 0x22, 0xba,
+	0x02, 0x0a, 0x11, 0x50, 0x42, 0x44, 0x65, 0x63, 0x6f, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x49,
+	0x6d, 0x61, 0x67, 0x65, 0x12, 0x2a, 0x0a, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x69, 0x6d, 0x61, 0x67, 0x65,
+	0x12, 0x37, 0x0a, 0x0c, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x5f, 0x66, 0x69, 0x6c, 0x74, 0x65, 0x72,
+	0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0b, 0x63, 0x6f,
+	0x6c, 0x6f, 0x72, 0x46, 0x69, 0x6c, 0x74, 0x65, 0x72, 0x12, 0x26, 0x0a, 0x03, 0x66, 0x69, 0x74,
+	0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e,
+	0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x03, 0x66, 0x69,
+	0x74, 0x12, 0x32, 0x0a, 0x09, 0x61, 0x6c, 0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x18, 0x04,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x09, 0x61, 0x6c, 0x69, 0x67,
+	0x6e, 0x6d, 0x65, 0x6e, 0x74, 0x12, 0x36, 0x0a, 0x0b, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x53,
+	0x6c, 0x69, 0x63, 0x65, 0x18, 0x05, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f,
+	0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79,
+	0x52, 0x0b, 0x63, 0x65, 0x6e, 0x74, 0x65, 0x72, 0x53, 0x6c, 0x69, 0x63, 0x65, 0x12, 0x2c, 0x0a,
+	0x06, 0x72, 0x65, 0x70, 0x65, 0x61, 0x74, 0x18, 0x06, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e,
+	0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e,
+	0x41, 0x6e, 0x79, 0x52, 0x06, 0x72, 0x65, 0x70, 0x65, 0x61, 0x74, 0x22, 0xc7, 0x01, 0x0a, 0x0e,
+	0x50, 0x42, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x12, 0x10,
+	0x0a, 0x03, 0x75, 0x72, 0x6c, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x75, 0x72, 0x6c,
+	0x12, 0x14, 0x0a, 0x05, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52,
+	0x05, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x12, 0x51, 0x0a, 0x07, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72,
+	0x73, 0x18, 0x03, 0x20, 0x03, 0x28, 0x0b, 0x32, 0x37, 0x2e, 0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72,
+	0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x70, 0x62, 0x66, 0x6c, 0x75,
+	0x74, 0x74, 0x65, 0x72, 0x2e, 0x50, 0x42, 0x4e, 0x65, 0x74, 0x77, 0x6f, 0x72, 0x6b, 0x49, 0x6d,
+	0x61, 0x67, 0x65, 0x2e, 0x48, 0x65, 0x61, 0x64, 0x65, 0x72, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79,
+	0x52, 0x07, 0x68, 0x65, 0x61, 0x64, 0x65, 0x72, 0x73, 0x1a, 0x3a, 0x0a, 0x0c, 0x48, 0x65, 0x61,
+	0x64, 0x65, 0x72, 0x73, 0x45, 0x6e, 0x74, 0x72, 0x79, 0x12, 0x10, 0x0a, 0x03, 0x6b, 0x65, 0x79,
+	0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x03, 0x6b, 0x65, 0x79, 0x12, 0x14, 0x0a, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x18, 0x02, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76, 0x61, 0x6c, 0x75,
+	0x65, 0x3a, 0x02, 0x38, 0x01, 0x22, 0x4b, 0x0a, 0x08, 0x50, 0x42, 0x42, 0x6f, 0x78, 0x46, 0x69,
+	0x74, 0x12, 0x3f, 0x0a, 0x07, 0x62, 0x6f, 0x78, 0x5f, 0x66, 0x69, 0x74, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0e, 0x32, 0x26, 0x2e, 0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73,
+	0x61, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x70, 0x62, 0x66, 0x6c, 0x75, 0x74, 0x74, 0x65, 0x72, 0x2e,
+	0x45, 0x6e, 0x75, 0x6d, 0x42, 0x6f, 0x78, 0x46, 0x69, 0x74, 0x52, 0x06, 0x62, 0x6f, 0x78, 0x46,
+	0x69, 0x74, 0x22, 0x29, 0x0a, 0x0b, 0x50, 0x42, 0x41, 0x6c, 0x69, 0x67, 0x6e, 0x6d, 0x65, 0x6e,
+	0x74, 0x12, 0x0c, 0x0a, 0x01, 0x78, 0x18, 0x01, 0x20, 0x01, 0x28, 0x02, 0x52, 0x01, 0x78, 0x12,
+	0x0c, 0x0a, 0x01, 0x79, 0x18, 0x02, 0x20, 0x01, 0x28, 0x02, 0x52, 0x01, 0x79, 0x22, 0x54, 0x0a,
+	0x0d, 0x50, 0x42, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x52, 0x65, 0x70, 0x65, 0x61, 0x74, 0x12, 0x43,
+	0x0a, 0x06, 0x72, 0x65, 0x70, 0x65, 0x61, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x2b,
+	0x2e, 0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2e, 0x76,
+	0x31, 0x2e, 0x70, 0x62, 0x66, 0x6c, 0x75, 0x74, 0x74, 0x65, 0x72, 0x2e, 0x45, 0x6e, 0x75, 0x6d,
+	0x49, 0x6d, 0x61, 0x67, 0x65, 0x52, 0x65, 0x70, 0x65, 0x61, 0x74, 0x52, 0x06, 0x72, 0x65, 0x70,
+	0x65, 0x61, 0x74, 0x22, 0x53, 0x0a, 0x0a, 0x50, 0x42, 0x42, 0x6f, 0x78, 0x53, 0x68, 0x61, 0x70,
+	0x65, 0x12, 0x45, 0x0a, 0x09, 0x62, 0x6f, 0x78, 0x5f, 0x73, 0x68, 0x61, 0x70, 0x65, 0x18, 0x01,
+	0x20, 0x01, 0x28, 0x0e, 0x32, 0x28, 0x2e, 0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72, 0x65, 0x6c, 0x61,
+	0x73, 0x73, 0x61, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x70, 0x62, 0x66, 0x6c, 0x75, 0x74, 0x74, 0x65,
+	0x72, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x42, 0x6f, 0x78, 0x53, 0x68, 0x61, 0x70, 0x65, 0x52, 0x08,
+	0x62, 0x6f, 0x78, 0x53, 0x68, 0x61, 0x70, 0x65, 0x22, 0x53, 0x0a, 0x0a, 0x50, 0x42, 0x54, 0x69,
+	0x6c, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x45, 0x0a, 0x09, 0x74, 0x69, 0x6c, 0x65, 0x5f, 0x6d,
+	0x6f, 0x64, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32, 0x28, 0x2e, 0x6c, 0x65, 0x6d, 0x6d,
+	0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2e, 0x76, 0x31, 0x2e, 0x70, 0x62, 0x66,
+	0x6c, 0x75, 0x74, 0x74, 0x65, 0x72, 0x2e, 0x45, 0x6e, 0x75, 0x6d, 0x54, 0x69, 0x6c, 0x65, 0x4d,
+	0x6f, 0x64, 0x65, 0x52, 0x08, 0x74, 0x69, 0x6c, 0x65, 0x4d, 0x6f, 0x64, 0x65, 0x22, 0xe4, 0x01,
+	0x0a, 0x0e, 0x50, 0x42, 0x42, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73,
+	0x12, 0x2f, 0x0a, 0x08, 0x74, 0x6f, 0x70, 0x5f, 0x6c, 0x65, 0x66, 0x74, 0x18, 0x01, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x07, 0x74, 0x6f, 0x70, 0x4c, 0x65, 0x66,
+	0x74, 0x12, 0x31, 0x0a, 0x09, 0x74, 0x6f, 0x70, 0x5f, 0x72, 0x69, 0x67, 0x68, 0x74, 0x18, 0x02,
+	0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72,
+	0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x08, 0x74, 0x6f, 0x70, 0x52,
+	0x69, 0x67, 0x68, 0x74, 0x12, 0x35, 0x0a, 0x0b, 0x62, 0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x5f, 0x6c,
+	0x65, 0x66, 0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52,
+	0x0a, 0x62, 0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x4c, 0x65, 0x66, 0x74, 0x12, 0x37, 0x0a, 0x0c, 0x62,
+	0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x5f, 0x72, 0x69, 0x67, 0x68, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0b, 0x62, 0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x52,
+	0x69, 0x67, 0x68, 0x74, 0x22, 0x41, 0x0a, 0x11, 0x50, 0x42, 0x42, 0x6f, 0x72, 0x64, 0x65, 0x72,
+	0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x41, 0x6c, 0x6c, 0x12, 0x2c, 0x0a, 0x06, 0x72, 0x61, 0x64,
+	0x69, 0x75, 0x73, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67,
+	0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52,
+	0x06, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x22, 0xe8, 0x01, 0x0a, 0x12, 0x50, 0x42, 0x42, 0x6f,
+	0x72, 0x64, 0x65, 0x72, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x4f, 0x6e, 0x6c, 0x79, 0x12, 0x2f,
+	0x0a, 0x08, 0x74, 0x6f, 0x70, 0x5f, 0x6c, 0x65, 0x66, 0x74, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b,
+	0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62,
+	0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x07, 0x74, 0x6f, 0x70, 0x4c, 0x65, 0x66, 0x74, 0x12,
+	0x31, 0x0a, 0x09, 0x74, 0x6f, 0x70, 0x5f, 0x72, 0x69, 0x67, 0x68, 0x74, 0x18, 0x02, 0x20, 0x01,
+	0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74,
+	0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x08, 0x74, 0x6f, 0x70, 0x52, 0x69, 0x67,
+	0x68, 0x74, 0x12, 0x35, 0x0a, 0x0b, 0x62, 0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x5f, 0x6c, 0x65, 0x66,
+	0x74, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65,
+	0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0a, 0x62,
+	0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x4c, 0x65, 0x66, 0x74, 0x12, 0x37, 0x0a, 0x0c, 0x62, 0x6f, 0x74,
+	0x74, 0x6f, 0x6d, 0x5f, 0x72, 0x69, 0x67, 0x68, 0x74, 0x18, 0x04, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0b, 0x62, 0x6f, 0x74, 0x74, 0x6f, 0x6d, 0x52, 0x69, 0x67,
+	0x68, 0x74, 0x22, 0x1f, 0x0a, 0x07, 0x50, 0x42, 0x46, 0x6c, 0x6f, 0x61, 0x74, 0x12, 0x14, 0x0a,
+	0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x02, 0x52, 0x05, 0x76, 0x61,
+	0x6c, 0x75, 0x65, 0x22, 0x1d, 0x0a, 0x05, 0x50, 0x42, 0x49, 0x6e, 0x74, 0x12, 0x14, 0x0a, 0x05,
+	0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x05, 0x52, 0x05, 0x76, 0x61, 0x6c,
+	0x75, 0x65, 0x22, 0x20, 0x0a, 0x08, 0x50, 0x42, 0x53, 0x74, 0x72, 0x69, 0x6e, 0x67, 0x12, 0x14,
+	0x0a, 0x05, 0x76, 0x61, 0x6c, 0x75, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x09, 0x52, 0x05, 0x76,
+	0x61, 0x6c, 0x75, 0x65, 0x22, 0x91, 0x01, 0x0a, 0x0b, 0x50, 0x42, 0x42, 0x6f, 0x72, 0x64, 0x65,
+	0x72, 0x41, 0x6c, 0x6c, 0x12, 0x2a, 0x0a, 0x05, 0x77, 0x69, 0x64, 0x74, 0x68, 0x18, 0x01, 0x20,
+	0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f,
+	0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x77, 0x69, 0x64, 0x74, 0x68,
+	0x12, 0x2a, 0x0a, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x18, 0x02, 0x20, 0x01, 0x28, 0x0b, 0x32,
+	0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75,
+	0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x2a, 0x0a, 0x05,
+	0x73, 0x74, 0x79, 0x6c, 0x65, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f,
+	0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e,
+	0x79, 0x52, 0x05, 0x73, 0x74, 0x79, 0x6c, 0x65, 0x22, 0x5f, 0x0a, 0x0d, 0x50, 0x42, 0x42, 0x6f,
+	0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x12, 0x4e, 0x0a, 0x0c, 0x62, 0x6f, 0x72,
+	0x64, 0x65, 0x72, 0x5f, 0x73, 0x74, 0x79, 0x6c, 0x65, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0e, 0x32,
+	0x2b, 0x2e, 0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2e,
+	0x76, 0x31, 0x2e, 0x70, 0x62, 0x66, 0x6c, 0x75, 0x74, 0x74, 0x65, 0x72, 0x2e, 0x45, 0x6e, 0x75,
+	0x6d, 0x42, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x52, 0x0b, 0x62, 0x6f,
+	0x72, 0x64, 0x65, 0x72, 0x53, 0x74, 0x79, 0x6c, 0x65, 0x22, 0xd9, 0x01, 0x0a, 0x0b, 0x50, 0x42,
+	0x42, 0x6f, 0x78, 0x53, 0x68, 0x61, 0x64, 0x6f, 0x77, 0x12, 0x2a, 0x0a, 0x05, 0x63, 0x6f, 0x6c,
+	0x6f, 0x72, 0x18, 0x01, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x05,
+	0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x12, 0x2c, 0x0a, 0x06, 0x6f, 0x66, 0x66, 0x73, 0x65, 0x74, 0x18,
+	0x02, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70,
+	0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x06, 0x6f, 0x66, 0x66,
+	0x73, 0x65, 0x74, 0x12, 0x35, 0x0a, 0x0b, 0x62, 0x6c, 0x75, 0x72, 0x5f, 0x72, 0x61, 0x64, 0x69,
+	0x75, 0x73, 0x18, 0x03, 0x20, 0x01, 0x28, 0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c,
+	0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f, 0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0a,
+	0x62, 0x6c, 0x75, 0x72, 0x52, 0x61, 0x64, 0x69, 0x75, 0x73, 0x12, 0x39, 0x0a, 0x0d, 0x73, 0x70,
+	0x72, 0x65, 0x61, 0x64, 0x5f, 0x72, 0x61, 0x64, 0x69, 0x75, 0x73, 0x18, 0x04, 0x20, 0x01, 0x28,
+	0x0b, 0x32, 0x14, 0x2e, 0x67, 0x6f, 0x6f, 0x67, 0x6c, 0x65, 0x2e, 0x70, 0x72, 0x6f, 0x74, 0x6f,
+	0x62, 0x75, 0x66, 0x2e, 0x41, 0x6e, 0x79, 0x52, 0x0c, 0x73, 0x70, 0x72, 0x65, 0x61, 0x64, 0x52,
+	0x61, 0x64, 0x69, 0x75, 0x73, 0x2a, 0x3b, 0x0a, 0x0b, 0x50, 0x42, 0x46, 0x6f, 0x6e, 0x74, 0x53,
+	0x74, 0x79, 0x6c, 0x65, 0x12, 0x15, 0x0a, 0x11, 0x46, 0x4f, 0x4e, 0x54, 0x5f, 0x53, 0x54, 0x59,
+	0x4c, 0x45, 0x5f, 0x4e, 0x4f, 0x52, 0x4d, 0x41, 0x4c, 0x10, 0x00, 0x12, 0x15, 0x0a, 0x11, 0x46,
+	0x4f, 0x4e, 0x54, 0x5f, 0x53, 0x54, 0x59, 0x4c, 0x45, 0x5f, 0x49, 0x54, 0x41, 0x4c, 0x49, 0x43,
+	0x10, 0x01, 0x2a, 0x76, 0x0a, 0x0e, 0x50, 0x42, 0x43, 0x6f, 0x6c, 0x6c, 0x61, 0x70, 0x73, 0x65,
+	0x4d, 0x6f, 0x64, 0x65, 0x12, 0x19, 0x0a, 0x15, 0x43, 0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53, 0x45,
+	0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c, 0x49, 0x44, 0x10, 0x00, 0x12,
+	0x1a, 0x0a, 0x16, 0x43, 0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53, 0x45, 0x5f, 0x4d, 0x4f, 0x44, 0x45,
+	0x5f, 0x50, 0x41, 0x52, 0x41, 0x4c, 0x4c, 0x41, 0x58, 0x10, 0x01, 0x12, 0x15, 0x0a, 0x11, 0x43,
+	0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53, 0x45, 0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f, 0x50, 0x49, 0x4e,
+	0x10, 0x02, 0x12, 0x16, 0x0a, 0x12, 0x43, 0x4f, 0x4c, 0x4c, 0x41, 0x50, 0x53, 0x45, 0x5f, 0x4d,
+	0x4f, 0x44, 0x45, 0x5f, 0x4e, 0x4f, 0x4e, 0x45, 0x10, 0x03, 0x2a, 0x97, 0x03, 0x0a, 0x0d, 0x45,
+	0x6e, 0x75, 0x6d, 0x42, 0x6c, 0x65, 0x6e, 0x64, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x16, 0x0a, 0x12,
+	0x42, 0x4c, 0x45, 0x4e, 0x44, 0x5f, 0x4d, 0x4f, 0x44, 0x45, 0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c,
+	0x49, 0x44, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05, 0x63, 0x6c, 0x65, 0x61, 0x72, 0x10, 0x01, 0x12,
+	0x07, 0x0a, 0x03, 0x73, 0x72, 0x63, 0x10, 0x02, 0x12, 0x07, 0x0a, 0x03, 0x64, 0x73, 0x74, 0x10,
+	0x03, 0x12, 0x0b, 0x0a, 0x07, 0x73, 0x72, 0x63, 0x4f, 0x76, 0x65, 0x72, 0x10, 0x04, 0x12, 0x0b,
+	0x0a, 0x07, 0x64, 0x73, 0x74, 0x4f, 0x76, 0x65, 0x72, 0x10, 0x05, 0x12, 0x09, 0x0a, 0x05, 0x73,
+	0x72, 0x63, 0x49, 0x6e, 0x10, 0x06, 0x12, 0x09, 0x0a, 0x05, 0x64, 0x73, 0x74, 0x49, 0x6e, 0x10,
+	0x07, 0x12, 0x0a, 0x0a, 0x06, 0x73, 0x72, 0x63, 0x4f, 0x75, 0x74, 0x10, 0x08, 0x12, 0x0a, 0x0a,
+	0x06, 0x64, 0x73, 0x74, 0x4f, 0x75, 0x74, 0x10, 0x09, 0x12, 0x0b, 0x0a, 0x07, 0x73, 0x72, 0x63,
+	0x41, 0x54, 0x6f, 0x70, 0x10, 0x0a, 0x12, 0x0b, 0x0a, 0x07, 0x64, 0x73, 0x74, 0x41, 0x54, 0x6f,
+	0x70, 0x10, 0x0b, 0x12, 0x07, 0x0a, 0x03, 0x78, 0x6f, 0x72, 0x10, 0x0c, 0x12, 0x08, 0x0a, 0x04,
+	0x70, 0x6c, 0x75, 0x73, 0x10, 0x0d, 0x12, 0x0c, 0x0a, 0x08, 0x6d, 0x6f, 0x64, 0x75, 0x6c, 0x61,
+	0x74, 0x65, 0x10, 0x0e, 0x12, 0x0a, 0x0a, 0x06, 0x73, 0x63, 0x72, 0x65, 0x65, 0x6e, 0x10, 0x0f,
+	0x12, 0x0b, 0x0a, 0x07, 0x6f, 0x76, 0x65, 0x72, 0x6c, 0x61, 0x79, 0x10, 0x10, 0x12, 0x0a, 0x0a,
+	0x06, 0x64, 0x61, 0x72, 0x6b, 0x65, 0x6e, 0x10, 0x11, 0x12, 0x0b, 0x0a, 0x07, 0x6c, 0x69, 0x67,
+	0x68, 0x74, 0x65, 0x6e, 0x10, 0x12, 0x12, 0x0e, 0x0a, 0x0a, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x44,
+	0x6f, 0x64, 0x67, 0x65, 0x10, 0x13, 0x12, 0x0d, 0x0a, 0x09, 0x63, 0x6f, 0x6c, 0x6f, 0x72, 0x42,
+	0x75, 0x72, 0x6e, 0x10, 0x14, 0x12, 0x0d, 0x0a, 0x09, 0x68, 0x61, 0x72, 0x64, 0x4c, 0x69, 0x67,
+	0x68, 0x74, 0x10, 0x15, 0x12, 0x0d, 0x0a, 0x09, 0x73, 0x6f, 0x66, 0x74, 0x4c, 0x69, 0x67, 0x68,
+	0x74, 0x10, 0x16, 0x12, 0x0e, 0x0a, 0x0a, 0x64, 0x69, 0x66, 0x66, 0x65, 0x72, 0x65, 0x6e, 0x63,
+	0x65, 0x10, 0x17, 0x12, 0x0d, 0x0a, 0x09, 0x65, 0x78, 0x63, 0x6c, 0x75, 0x73, 0x69, 0x6f, 0x6e,
+	0x10, 0x18, 0x12, 0x0c, 0x0a, 0x08, 0x6d, 0x75, 0x6c, 0x74, 0x69, 0x70, 0x6c, 0x79, 0x10, 0x19,
+	0x12, 0x07, 0x0a, 0x03, 0x68, 0x75, 0x65, 0x10, 0x1a, 0x12, 0x0e, 0x0a, 0x0a, 0x73, 0x61, 0x74,
+	0x75, 0x72, 0x61, 0x74, 0x69, 0x6f, 0x6e, 0x10, 0x1b, 0x12, 0x09, 0x0a, 0x05, 0x63, 0x6f, 0x6c,
+	0x6f, 0x72, 0x10, 0x1c, 0x12, 0x0e, 0x0a, 0x0a, 0x6c, 0x75, 0x6d, 0x69, 0x6e, 0x6f, 0x73, 0x69,
+	0x74, 0x79, 0x10, 0x1d, 0x2a, 0x7c, 0x0a, 0x0a, 0x45, 0x6e, 0x75, 0x6d, 0x42, 0x6f, 0x78, 0x46,
+	0x69, 0x74, 0x12, 0x13, 0x0a, 0x0f, 0x42, 0x4f, 0x58, 0x5f, 0x46, 0x49, 0x54, 0x5f, 0x49, 0x4e,
+	0x56, 0x41, 0x4c, 0x49, 0x44, 0x10, 0x00, 0x12, 0x08, 0x0a, 0x04, 0x66, 0x69, 0x6c, 0x6c, 0x10,
+	0x01, 0x12, 0x0b, 0x0a, 0x07, 0x63, 0x6f, 0x6e, 0x74, 0x61, 0x69, 0x6e, 0x10, 0x02, 0x12, 0x09,
+	0x0a, 0x05, 0x63, 0x6f, 0x76, 0x65, 0x72, 0x10, 0x03, 0x12, 0x0d, 0x0a, 0x09, 0x66, 0x69, 0x74,
+	0x5f, 0x77, 0x69, 0x64, 0x74, 0x68, 0x10, 0x04, 0x12, 0x0e, 0x0a, 0x0a, 0x66, 0x69, 0x74, 0x5f,
+	0x68, 0x65, 0x69, 0x67, 0x68, 0x74, 0x10, 0x05, 0x12, 0x08, 0x0a, 0x04, 0x6e, 0x6f, 0x6e, 0x65,
+	0x10, 0x06, 0x12, 0x0e, 0x0a, 0x0a, 0x73, 0x63, 0x61, 0x6c, 0x65, 0x5f, 0x64, 0x6f, 0x77, 0x6e,
+	0x10, 0x07, 0x2a, 0x5f, 0x0a, 0x0f, 0x45, 0x6e, 0x75, 0x6d, 0x49, 0x6d, 0x61, 0x67, 0x65, 0x52,
+	0x65, 0x70, 0x65, 0x61, 0x74, 0x12, 0x18, 0x0a, 0x14, 0x49, 0x4d, 0x41, 0x47, 0x45, 0x5f, 0x52,
+	0x45, 0x50, 0x45, 0x41, 0x54, 0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c, 0x49, 0x44, 0x10, 0x00, 0x12,
+	0x0a, 0x0a, 0x06, 0x72, 0x65, 0x70, 0x65, 0x61, 0x74, 0x10, 0x01, 0x12, 0x0b, 0x0a, 0x07, 0x72,
+	0x65, 0x70, 0x65, 0x61, 0x74, 0x58, 0x10, 0x02, 0x12, 0x0b, 0x0a, 0x07, 0x72, 0x65, 0x70, 0x65,
+	0x61, 0x74, 0x59, 0x10, 0x03, 0x12, 0x0c, 0x0a, 0x08, 0x6e, 0x6f, 0x52, 0x65, 0x70, 0x65, 0x61,
+	0x74, 0x10, 0x04, 0x2a, 0x40, 0x0a, 0x0c, 0x45, 0x6e, 0x75, 0x6d, 0x42, 0x6f, 0x78, 0x53, 0x68,
+	0x61, 0x70, 0x65, 0x12, 0x15, 0x0a, 0x11, 0x42, 0x4f, 0x58, 0x5f, 0x53, 0x48, 0x41, 0x50, 0x45,
+	0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c, 0x49, 0x44, 0x10, 0x00, 0x12, 0x0d, 0x0a, 0x09, 0x72, 0x65,
+	0x63, 0x74, 0x61, 0x6e, 0x67, 0x6c, 0x65, 0x10, 0x01, 0x12, 0x0a, 0x0a, 0x06, 0x63, 0x69, 0x72,
+	0x63, 0x6c, 0x65, 0x10, 0x02, 0x2a, 0x4a, 0x0a, 0x0c, 0x45, 0x6e, 0x75, 0x6d, 0x54, 0x69, 0x6c,
+	0x65, 0x4d, 0x6f, 0x64, 0x65, 0x12, 0x15, 0x0a, 0x11, 0x54, 0x49, 0x4c, 0x45, 0x5f, 0x4d, 0x4f,
+	0x44, 0x45, 0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c, 0x49, 0x44, 0x10, 0x00, 0x12, 0x09, 0x0a, 0x05,
+	0x63, 0x6c, 0x61, 0x6d, 0x70, 0x10, 0x01, 0x12, 0x0c, 0x0a, 0x08, 0x72, 0x65, 0x70, 0x65, 0x61,
+	0x74, 0x65, 0x64, 0x10, 0x02, 0x12, 0x0a, 0x0a, 0x06, 0x6d, 0x69, 0x72, 0x72, 0x6f, 0x72, 0x10,
+	0x03, 0x2a, 0x5a, 0x0a, 0x0f, 0x45, 0x6e, 0x75, 0x6d, 0x42, 0x6f, 0x72, 0x64, 0x65, 0x72, 0x53,
+	0x74, 0x79, 0x6c, 0x65, 0x12, 0x18, 0x0a, 0x14, 0x42, 0x4f, 0x52, 0x44, 0x45, 0x52, 0x5f, 0x53,
+	0x54, 0x59, 0x4c, 0x45, 0x5f, 0x49, 0x4e, 0x56, 0x41, 0x4c, 0x49, 0x44, 0x10, 0x00, 0x12, 0x15,
+	0x0a, 0x11, 0x42, 0x4f, 0x52, 0x44, 0x45, 0x52, 0x5f, 0x53, 0x54, 0x59, 0x4c, 0x45, 0x5f, 0x4e,
+	0x4f, 0x4e, 0x45, 0x10, 0x01, 0x12, 0x16, 0x0a, 0x12, 0x42, 0x4f, 0x52, 0x44, 0x45, 0x52, 0x5f,
+	0x53, 0x54, 0x59, 0x4c, 0x45, 0x5f, 0x53, 0x4f, 0x4c, 0x49, 0x44, 0x10, 0x02, 0x42, 0x3f, 0x5a,
 	0x3d, 0x67, 0x69, 0x74, 0x68, 0x75, 0x62, 0x2e, 0x63, 0x6f, 0x6d, 0x2f, 0x6c, 0x65, 0x6d, 0x6d,
 	0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61, 0x6c, 0x2f, 0x50, 0x42, 0x46, 0x6c, 0x75, 0x74,
 	0x74, 0x65, 0x72, 0x3b, 0x6c, 0x65, 0x6d, 0x6d, 0x65, 0x72, 0x65, 0x6c, 0x61, 0x73, 0x73, 0x61,
@@ -2279,92 +4910,194 @@ func file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescGZIP()
 	return file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDescData
 }
 
-var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes = make([]protoimpl.EnumInfo, 1)
-var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes = make([]protoimpl.MessageInfo, 32)
+var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_enumTypes = make([]protoimpl.EnumInfo, 8)
+var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes = make([]protoimpl.MessageInfo, 63)
 var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_goTypes = []interface{}{
-	(PBCollapseMode)(0),           // 0: lemmerelassal.v1.pbflutter.PBCollapseMode
-	(*PBColor)(nil),               // 1: lemmerelassal.v1.pbflutter.PBColor
-	(*PBSVG)(nil),                 // 2: lemmerelassal.v1.pbflutter.PBSVG
-	(*PBColumn)(nil),              // 3: lemmerelassal.v1.pbflutter.PBColumn
-	(*PBAlign)(nil),               // 4: lemmerelassal.v1.pbflutter.PBAlign
-	(*PBText)(nil),                // 5: lemmerelassal.v1.pbflutter.PBText
-	(*PBAcidText)(nil),            // 6: lemmerelassal.v1.pbflutter.PBAcidText
-	(*PBShadow)(nil),              // 7: lemmerelassal.v1.pbflutter.PBShadow
-	(*PBOffset)(nil),              // 8: lemmerelassal.v1.pbflutter.PBOffset
-	(*PBTextStyle)(nil),           // 9: lemmerelassal.v1.pbflutter.PBTextStyle
-	(*PBSize)(nil),                // 10: lemmerelassal.v1.pbflutter.PBSize
-	(*PBPreferredSizeWidget)(nil), // 11: lemmerelassal.v1.pbflutter.PBPreferredSizeWidget
-	(*PBSliverAppBar)(nil),        // 12: lemmerelassal.v1.pbflutter.PBSliverAppBar
-	(*PBIconButton)(nil),          // 13: lemmerelassal.v1.pbflutter.PBIconButton
-	(*PBFlexibleSpaceBar)(nil),    // 14: lemmerelassal.v1.pbflutter.PBFlexibleSpaceBar
-	(*PBIconData)(nil),            // 15: lemmerelassal.v1.pbflutter.PBIconData
-	(*PBIcon)(nil),                // 16: lemmerelassal.v1.pbflutter.PBIcon
-	(*PBTabBar)(nil),              // 17: lemmerelassal.v1.pbflutter.PBTabBar
-	(*PBTab)(nil),                 // 18: lemmerelassal.v1.pbflutter.PBTab
-	(*PBTabBarView)(nil),          // 19: lemmerelassal.v1.pbflutter.PBTabBarView
-	(*PBWrap)(nil),                // 20: lemmerelassal.v1.pbflutter.PBWrap
-	(*PBScaffold)(nil),            // 21: lemmerelassal.v1.pbflutter.PBScaffold
-	(*PBPositioned)(nil),          // 22: lemmerelassal.v1.pbflutter.PBPositioned
-	(*PBEdgeInsetsGeometry)(nil),  // 23: lemmerelassal.v1.pbflutter.PBEdgeInsetsGeometry
-	(*PBPadding)(nil),             // 24: lemmerelassal.v1.pbflutter.PBPadding
-	(*PBStack)(nil),               // 25: lemmerelassal.v1.pbflutter.PBStack
-	(*PBRawMaterialButton)(nil),   // 26: lemmerelassal.v1.pbflutter.PBRawMaterialButton
-	(*PBCircleBorder)(nil),        // 27: lemmerelassal.v1.pbflutter.PBCircleBorder
-	(*PBShimmer)(nil),             // 28: lemmerelassal.v1.pbflutter.PBShimmer
-	(*PBBoxConstraints)(nil),      // 29: lemmerelassal.v1.pbflutter.PBBoxConstraints
-	(*PBContainer)(nil),           // 30: lemmerelassal.v1.pbflutter.PBContainer
-	(*PBColorTween)(nil),          // 31: lemmerelassal.v1.pbflutter.PBColorTween
-	(*PBAnimatedBackground)(nil),  // 32: lemmerelassal.v1.pbflutter.PBAnimatedBackground
-	(*any.Any)(nil),               // 33: google.protobuf.Any
+	(PBFontStyle)(0),              // 0: lemmerelassal.v1.pbflutter.PBFontStyle
+	(PBCollapseMode)(0),           // 1: lemmerelassal.v1.pbflutter.PBCollapseMode
+	(EnumBlendMode)(0),            // 2: lemmerelassal.v1.pbflutter.EnumBlendMode
+	(EnumBoxFit)(0),               // 3: lemmerelassal.v1.pbflutter.EnumBoxFit
+	(EnumImageRepeat)(0),          // 4: lemmerelassal.v1.pbflutter.EnumImageRepeat
+	(EnumBoxShape)(0),             // 5: lemmerelassal.v1.pbflutter.EnumBoxShape
+	(EnumTileMode)(0),             // 6: lemmerelassal.v1.pbflutter.EnumTileMode
+	(EnumBorderStyle)(0),          // 7: lemmerelassal.v1.pbflutter.EnumBorderStyle
+	(*PBColor)(nil),               // 8: lemmerelassal.v1.pbflutter.PBColor
+	(*PBSVG)(nil),                 // 9: lemmerelassal.v1.pbflutter.PBSVG
+	(*PBColumn)(nil),              // 10: lemmerelassal.v1.pbflutter.PBColumn
+	(*PBAlign)(nil),               // 11: lemmerelassal.v1.pbflutter.PBAlign
+	(*PBText)(nil),                // 12: lemmerelassal.v1.pbflutter.PBText
+	(*PBAcidText)(nil),            // 13: lemmerelassal.v1.pbflutter.PBAcidText
+	(*PBShadow)(nil),              // 14: lemmerelassal.v1.pbflutter.PBShadow
+	(*PBOffset)(nil),              // 15: lemmerelassal.v1.pbflutter.PBOffset
+	(*PBTextStyle)(nil),           // 16: lemmerelassal.v1.pbflutter.PBTextStyle
+	(*PBSize)(nil),                // 17: lemmerelassal.v1.pbflutter.PBSize
+	(*PBPreferredSizeWidget)(nil), // 18: lemmerelassal.v1.pbflutter.PBPreferredSizeWidget
+	(*PBSliverAppBar)(nil),        // 19: lemmerelassal.v1.pbflutter.PBSliverAppBar
+	(*PBIconButton)(nil),          // 20: lemmerelassal.v1.pbflutter.PBIconButton
+	(*PBFlexibleSpaceBar)(nil),    // 21: lemmerelassal.v1.pbflutter.PBFlexibleSpaceBar
+	(*PBIconData)(nil),            // 22: lemmerelassal.v1.pbflutter.PBIconData
+	(*PBIcon)(nil),                // 23: lemmerelassal.v1.pbflutter.PBIcon
+	(*PBTabBar)(nil),              // 24: lemmerelassal.v1.pbflutter.PBTabBar
+	(*PBTab)(nil),                 // 25: lemmerelassal.v1.pbflutter.PBTab
+	(*PBTabBarView)(nil),          // 26: lemmerelassal.v1.pbflutter.PBTabBarView
+	(*PBWrap)(nil),                // 27: lemmerelassal.v1.pbflutter.PBWrap
+	(*PBScaffold)(nil),            // 28: lemmerelassal.v1.pbflutter.PBScaffold
+	(*PBPositioned)(nil),          // 29: lemmerelassal.v1.pbflutter.PBPositioned
+	(*PBEdgeInsetsGeometry)(nil),  // 30: lemmerelassal.v1.pbflutter.PBEdgeInsetsGeometry
+	(*PBPadding)(nil),             // 31: lemmerelassal.v1.pbflutter.PBPadding
+	(*PBStack)(nil),               // 32: lemmerelassal.v1.pbflutter.PBStack
+	(*PBRawMaterialButton)(nil),   // 33: lemmerelassal.v1.pbflutter.PBRawMaterialButton
+	(*PBCircleBorder)(nil),        // 34: lemmerelassal.v1.pbflutter.PBCircleBorder
+	(*PBShimmer)(nil),             // 35: lemmerelassal.v1.pbflutter.PBShimmer
+	(*PBBoxConstraints)(nil),      // 36: lemmerelassal.v1.pbflutter.PBBoxConstraints
+	(*PBContainer)(nil),           // 37: lemmerelassal.v1.pbflutter.PBContainer
+	(*PBColorTween)(nil),          // 38: lemmerelassal.v1.pbflutter.PBColorTween
+	(*PBAnimatedBackground)(nil),  // 39: lemmerelassal.v1.pbflutter.PBAnimatedBackground
+	(*PBDetailView)(nil),          // 40: lemmerelassal.v1.pbflutter.PBDetailView
+	(*PBTabEntry)(nil),            // 41: lemmerelassal.v1.pbflutter.PBTabEntry
+	(*PBListView)(nil),            // 42: lemmerelassal.v1.pbflutter.PBListView
+	(*PBKarte)(nil),               // 43: lemmerelassal.v1.pbflutter.PBKarte
+	(*PBScreenWidth)(nil),         // 44: lemmerelassal.v1.pbflutter.PBScreenWidth
+	(*PBScreenHeight)(nil),        // 45: lemmerelassal.v1.pbflutter.PBScreenHeight
+	(*PBRadiusElliptical)(nil),    // 46: lemmerelassal.v1.pbflutter.PBRadiusElliptical
+	(*PBBoxDecoration)(nil),       // 47: lemmerelassal.v1.pbflutter.PBBoxDecoration
+	(*PBBlendMode)(nil),           // 48: lemmerelassal.v1.pbflutter.PBBlendMode
+	(*PBTransformTranslate)(nil),  // 49: lemmerelassal.v1.pbflutter.PBTransformTranslate
+	(*PBTransformRotate)(nil),     // 50: lemmerelassal.v1.pbflutter.PBTransformRotate
+	(*PBTransformScale)(nil),      // 51: lemmerelassal.v1.pbflutter.PBTransformScale
+	(*PBLinearGradient)(nil),      // 52: lemmerelassal.v1.pbflutter.PBLinearGradient
+	(*PBGradient)(nil),            // 53: lemmerelassal.v1.pbflutter.PBGradient
+	(*PBDecorationImage)(nil),     // 54: lemmerelassal.v1.pbflutter.PBDecorationImage
+	(*PBNetworkImage)(nil),        // 55: lemmerelassal.v1.pbflutter.PBNetworkImage
+	(*PBBoxFit)(nil),              // 56: lemmerelassal.v1.pbflutter.PBBoxFit
+	(*PBAlignment)(nil),           // 57: lemmerelassal.v1.pbflutter.PBAlignment
+	(*PBImageRepeat)(nil),         // 58: lemmerelassal.v1.pbflutter.PBImageRepeat
+	(*PBBoxShape)(nil),            // 59: lemmerelassal.v1.pbflutter.PBBoxShape
+	(*PBTileMode)(nil),            // 60: lemmerelassal.v1.pbflutter.PBTileMode
+	(*PBBorderRadius)(nil),        // 61: lemmerelassal.v1.pbflutter.PBBorderRadius
+	(*PBBorderRadiusAll)(nil),     // 62: lemmerelassal.v1.pbflutter.PBBorderRadiusAll
+	(*PBBorderRadiusOnly)(nil),    // 63: lemmerelassal.v1.pbflutter.PBBorderRadiusOnly
+	(*PBFloat)(nil),               // 64: lemmerelassal.v1.pbflutter.PBFloat
+	(*PBInt)(nil),                 // 65: lemmerelassal.v1.pbflutter.PBInt
+	(*PBString)(nil),              // 66: lemmerelassal.v1.pbflutter.PBString
+	(*PBBorderAll)(nil),           // 67: lemmerelassal.v1.pbflutter.PBBorderAll
+	(*PBBorderStyle)(nil),         // 68: lemmerelassal.v1.pbflutter.PBBorderStyle
+	(*PBBoxShadow)(nil),           // 69: lemmerelassal.v1.pbflutter.PBBoxShadow
+	nil,                           // 70: lemmerelassal.v1.pbflutter.PBNetworkImage.HeadersEntry
+	(*any.Any)(nil),               // 71: google.protobuf.Any
 }
 var file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_depIdxs = []int32{
-	33, // 0: lemmerelassal.v1.pbflutter.PBColumn.children:type_name -> google.protobuf.Any
-	33, // 1: lemmerelassal.v1.pbflutter.PBAlign.child:type_name -> google.protobuf.Any
-	33, // 2: lemmerelassal.v1.pbflutter.PBText.text_style:type_name -> google.protobuf.Any
-	33, // 3: lemmerelassal.v1.pbflutter.PBAcidText.text_style:type_name -> google.protobuf.Any
-	33, // 4: lemmerelassal.v1.pbflutter.PBShadow.offset:type_name -> google.protobuf.Any
-	33, // 5: lemmerelassal.v1.pbflutter.PBShadow.color:type_name -> google.protobuf.Any
-	33, // 6: lemmerelassal.v1.pbflutter.PBTextStyle.color:type_name -> google.protobuf.Any
-	33, // 7: lemmerelassal.v1.pbflutter.PBTextStyle.shadows:type_name -> google.protobuf.Any
-	33, // 8: lemmerelassal.v1.pbflutter.PBPreferredSizeWidget.child:type_name -> google.protobuf.Any
-	33, // 9: lemmerelassal.v1.pbflutter.PBPreferredSizeWidget.preferred_size:type_name -> google.protobuf.Any
-	33, // 10: lemmerelassal.v1.pbflutter.PBSliverAppBar.leading:type_name -> google.protobuf.Any
-	33, // 11: lemmerelassal.v1.pbflutter.PBSliverAppBar.background_color:type_name -> google.protobuf.Any
-	33, // 12: lemmerelassal.v1.pbflutter.PBSliverAppBar.flexible_space:type_name -> google.protobuf.Any
-	33, // 13: lemmerelassal.v1.pbflutter.PBSliverAppBar.bottom:type_name -> google.protobuf.Any
-	33, // 14: lemmerelassal.v1.pbflutter.PBIconButton.icon:type_name -> google.protobuf.Any
-	0,  // 15: lemmerelassal.v1.pbflutter.PBFlexibleSpaceBar.collapse_mode:type_name -> lemmerelassal.v1.pbflutter.PBCollapseMode
-	33, // 16: lemmerelassal.v1.pbflutter.PBFlexibleSpaceBar.background:type_name -> google.protobuf.Any
-	33, // 17: lemmerelassal.v1.pbflutter.PBIcon.icon:type_name -> google.protobuf.Any
-	33, // 18: lemmerelassal.v1.pbflutter.PBIcon.color:type_name -> google.protobuf.Any
-	33, // 19: lemmerelassal.v1.pbflutter.PBTabBar.tabs:type_name -> google.protobuf.Any
-	33, // 20: lemmerelassal.v1.pbflutter.PBTab.icon:type_name -> google.protobuf.Any
-	33, // 21: lemmerelassal.v1.pbflutter.PBTabBarView.children:type_name -> google.protobuf.Any
-	33, // 22: lemmerelassal.v1.pbflutter.PBWrap.children:type_name -> google.protobuf.Any
-	33, // 23: lemmerelassal.v1.pbflutter.PBScaffold.body:type_name -> google.protobuf.Any
-	33, // 24: lemmerelassal.v1.pbflutter.PBPositioned.child:type_name -> google.protobuf.Any
-	33, // 25: lemmerelassal.v1.pbflutter.PBPadding.padding:type_name -> google.protobuf.Any
-	33, // 26: lemmerelassal.v1.pbflutter.PBPadding.child:type_name -> google.protobuf.Any
-	33, // 27: lemmerelassal.v1.pbflutter.PBStack.children:type_name -> google.protobuf.Any
-	33, // 28: lemmerelassal.v1.pbflutter.PBRawMaterialButton.constraints:type_name -> google.protobuf.Any
-	33, // 29: lemmerelassal.v1.pbflutter.PBRawMaterialButton.child:type_name -> google.protobuf.Any
-	33, // 30: lemmerelassal.v1.pbflutter.PBRawMaterialButton.fillColor:type_name -> google.protobuf.Any
-	33, // 31: lemmerelassal.v1.pbflutter.PBRawMaterialButton.shape:type_name -> google.protobuf.Any
-	33, // 32: lemmerelassal.v1.pbflutter.PBShimmer.base_color:type_name -> google.protobuf.Any
-	33, // 33: lemmerelassal.v1.pbflutter.PBShimmer.highlight_color:type_name -> google.protobuf.Any
-	33, // 34: lemmerelassal.v1.pbflutter.PBShimmer.child:type_name -> google.protobuf.Any
-	33, // 35: lemmerelassal.v1.pbflutter.PBContainer.color:type_name -> google.protobuf.Any
-	33, // 36: lemmerelassal.v1.pbflutter.PBContainer.width:type_name -> google.protobuf.Any
-	33, // 37: lemmerelassal.v1.pbflutter.PBContainer.height:type_name -> google.protobuf.Any
-	33, // 38: lemmerelassal.v1.pbflutter.PBContainer.child:type_name -> google.protobuf.Any
-	33, // 39: lemmerelassal.v1.pbflutter.PBColorTween.begin:type_name -> google.protobuf.Any
-	33, // 40: lemmerelassal.v1.pbflutter.PBColorTween.end:type_name -> google.protobuf.Any
-	33, // 41: lemmerelassal.v1.pbflutter.PBAnimatedBackground.color_tweens:type_name -> google.protobuf.Any
-	42, // [42:42] is the sub-list for method output_type
-	42, // [42:42] is the sub-list for method input_type
-	42, // [42:42] is the sub-list for extension type_name
-	42, // [42:42] is the sub-list for extension extendee
-	0,  // [0:42] is the sub-list for field type_name
+	71,  // 0: lemmerelassal.v1.pbflutter.PBColumn.children:type_name -> google.protobuf.Any
+	71,  // 1: lemmerelassal.v1.pbflutter.PBAlign.child:type_name -> google.protobuf.Any
+	71,  // 2: lemmerelassal.v1.pbflutter.PBText.text_style:type_name -> google.protobuf.Any
+	71,  // 3: lemmerelassal.v1.pbflutter.PBAcidText.text_style:type_name -> google.protobuf.Any
+	71,  // 4: lemmerelassal.v1.pbflutter.PBShadow.offset:type_name -> google.protobuf.Any
+	71,  // 5: lemmerelassal.v1.pbflutter.PBShadow.color:type_name -> google.protobuf.Any
+	71,  // 6: lemmerelassal.v1.pbflutter.PBTextStyle.color:type_name -> google.protobuf.Any
+	71,  // 7: lemmerelassal.v1.pbflutter.PBTextStyle.shadows:type_name -> google.protobuf.Any
+	0,   // 8: lemmerelassal.v1.pbflutter.PBTextStyle.font_style:type_name -> lemmerelassal.v1.pbflutter.PBFontStyle
+	71,  // 9: lemmerelassal.v1.pbflutter.PBTextStyle.decoration:type_name -> google.protobuf.Any
+	71,  // 10: lemmerelassal.v1.pbflutter.PBTextStyle.decoration_color:type_name -> google.protobuf.Any
+	71,  // 11: lemmerelassal.v1.pbflutter.PBTextStyle.decoration_tyle:type_name -> google.protobuf.Any
+	71,  // 12: lemmerelassal.v1.pbflutter.PBTextStyle.foreground:type_name -> google.protobuf.Any
+	71,  // 13: lemmerelassal.v1.pbflutter.PBPreferredSizeWidget.child:type_name -> google.protobuf.Any
+	71,  // 14: lemmerelassal.v1.pbflutter.PBPreferredSizeWidget.preferred_size:type_name -> google.protobuf.Any
+	71,  // 15: lemmerelassal.v1.pbflutter.PBSliverAppBar.leading:type_name -> google.protobuf.Any
+	71,  // 16: lemmerelassal.v1.pbflutter.PBSliverAppBar.background_color:type_name -> google.protobuf.Any
+	71,  // 17: lemmerelassal.v1.pbflutter.PBSliverAppBar.flexible_space:type_name -> google.protobuf.Any
+	71,  // 18: lemmerelassal.v1.pbflutter.PBSliverAppBar.bottom:type_name -> google.protobuf.Any
+	71,  // 19: lemmerelassal.v1.pbflutter.PBIconButton.icon:type_name -> google.protobuf.Any
+	1,   // 20: lemmerelassal.v1.pbflutter.PBFlexibleSpaceBar.collapse_mode:type_name -> lemmerelassal.v1.pbflutter.PBCollapseMode
+	71,  // 21: lemmerelassal.v1.pbflutter.PBFlexibleSpaceBar.background:type_name -> google.protobuf.Any
+	71,  // 22: lemmerelassal.v1.pbflutter.PBIcon.icon:type_name -> google.protobuf.Any
+	71,  // 23: lemmerelassal.v1.pbflutter.PBIcon.color:type_name -> google.protobuf.Any
+	71,  // 24: lemmerelassal.v1.pbflutter.PBTabBar.tabs:type_name -> google.protobuf.Any
+	71,  // 25: lemmerelassal.v1.pbflutter.PBTab.icon:type_name -> google.protobuf.Any
+	71,  // 26: lemmerelassal.v1.pbflutter.PBTabBarView.children:type_name -> google.protobuf.Any
+	71,  // 27: lemmerelassal.v1.pbflutter.PBWrap.children:type_name -> google.protobuf.Any
+	71,  // 28: lemmerelassal.v1.pbflutter.PBScaffold.body:type_name -> google.protobuf.Any
+	71,  // 29: lemmerelassal.v1.pbflutter.PBPositioned.child:type_name -> google.protobuf.Any
+	71,  // 30: lemmerelassal.v1.pbflutter.PBPadding.padding:type_name -> google.protobuf.Any
+	71,  // 31: lemmerelassal.v1.pbflutter.PBPadding.child:type_name -> google.protobuf.Any
+	71,  // 32: lemmerelassal.v1.pbflutter.PBStack.children:type_name -> google.protobuf.Any
+	71,  // 33: lemmerelassal.v1.pbflutter.PBRawMaterialButton.constraints:type_name -> google.protobuf.Any
+	71,  // 34: lemmerelassal.v1.pbflutter.PBRawMaterialButton.child:type_name -> google.protobuf.Any
+	71,  // 35: lemmerelassal.v1.pbflutter.PBRawMaterialButton.fillColor:type_name -> google.protobuf.Any
+	71,  // 36: lemmerelassal.v1.pbflutter.PBRawMaterialButton.shape:type_name -> google.protobuf.Any
+	71,  // 37: lemmerelassal.v1.pbflutter.PBShimmer.base_color:type_name -> google.protobuf.Any
+	71,  // 38: lemmerelassal.v1.pbflutter.PBShimmer.highlight_color:type_name -> google.protobuf.Any
+	71,  // 39: lemmerelassal.v1.pbflutter.PBShimmer.child:type_name -> google.protobuf.Any
+	71,  // 40: lemmerelassal.v1.pbflutter.PBContainer.color:type_name -> google.protobuf.Any
+	71,  // 41: lemmerelassal.v1.pbflutter.PBContainer.width:type_name -> google.protobuf.Any
+	71,  // 42: lemmerelassal.v1.pbflutter.PBContainer.height:type_name -> google.protobuf.Any
+	71,  // 43: lemmerelassal.v1.pbflutter.PBContainer.child:type_name -> google.protobuf.Any
+	71,  // 44: lemmerelassal.v1.pbflutter.PBContainer.decoration:type_name -> google.protobuf.Any
+	71,  // 45: lemmerelassal.v1.pbflutter.PBColorTween.begin:type_name -> google.protobuf.Any
+	71,  // 46: lemmerelassal.v1.pbflutter.PBColorTween.end:type_name -> google.protobuf.Any
+	71,  // 47: lemmerelassal.v1.pbflutter.PBAnimatedBackground.color_tweens:type_name -> google.protobuf.Any
+	71,  // 48: lemmerelassal.v1.pbflutter.PBTabEntry.title:type_name -> google.protobuf.Any
+	71,  // 49: lemmerelassal.v1.pbflutter.PBListView.children:type_name -> google.protobuf.Any
+	71,  // 50: lemmerelassal.v1.pbflutter.PBListView.padding:type_name -> google.protobuf.Any
+	71,  // 51: lemmerelassal.v1.pbflutter.PBKarte.preview:type_name -> google.protobuf.Any
+	71,  // 52: lemmerelassal.v1.pbflutter.PBKarte.gradient_color:type_name -> google.protobuf.Any
+	71,  // 53: lemmerelassal.v1.pbflutter.PBKarte.title:type_name -> google.protobuf.Any
+	71,  // 54: lemmerelassal.v1.pbflutter.PBBoxDecoration.color:type_name -> google.protobuf.Any
+	71,  // 55: lemmerelassal.v1.pbflutter.PBBoxDecoration.image:type_name -> google.protobuf.Any
+	71,  // 56: lemmerelassal.v1.pbflutter.PBBoxDecoration.border:type_name -> google.protobuf.Any
+	71,  // 57: lemmerelassal.v1.pbflutter.PBBoxDecoration.border_radius:type_name -> google.protobuf.Any
+	71,  // 58: lemmerelassal.v1.pbflutter.PBBoxDecoration.box_shadow:type_name -> google.protobuf.Any
+	71,  // 59: lemmerelassal.v1.pbflutter.PBBoxDecoration.gradient:type_name -> google.protobuf.Any
+	71,  // 60: lemmerelassal.v1.pbflutter.PBBoxDecoration.background_blend_mode:type_name -> google.protobuf.Any
+	71,  // 61: lemmerelassal.v1.pbflutter.PBBoxDecoration.shape:type_name -> google.protobuf.Any
+	2,   // 62: lemmerelassal.v1.pbflutter.PBBlendMode.blend_mode:type_name -> lemmerelassal.v1.pbflutter.EnumBlendMode
+	71,  // 63: lemmerelassal.v1.pbflutter.PBTransformTranslate.offset:type_name -> google.protobuf.Any
+	71,  // 64: lemmerelassal.v1.pbflutter.PBTransformTranslate.child:type_name -> google.protobuf.Any
+	71,  // 65: lemmerelassal.v1.pbflutter.PBTransformRotate.origin:type_name -> google.protobuf.Any
+	71,  // 66: lemmerelassal.v1.pbflutter.PBTransformRotate.alignment:type_name -> google.protobuf.Any
+	71,  // 67: lemmerelassal.v1.pbflutter.PBTransformRotate.child:type_name -> google.protobuf.Any
+	71,  // 68: lemmerelassal.v1.pbflutter.PBTransformScale.origin:type_name -> google.protobuf.Any
+	71,  // 69: lemmerelassal.v1.pbflutter.PBTransformScale.alignment:type_name -> google.protobuf.Any
+	71,  // 70: lemmerelassal.v1.pbflutter.PBTransformScale.child:type_name -> google.protobuf.Any
+	71,  // 71: lemmerelassal.v1.pbflutter.PBLinearGradient.begin:type_name -> google.protobuf.Any
+	71,  // 72: lemmerelassal.v1.pbflutter.PBLinearGradient.end:type_name -> google.protobuf.Any
+	71,  // 73: lemmerelassal.v1.pbflutter.PBLinearGradient.colors:type_name -> google.protobuf.Any
+	71,  // 74: lemmerelassal.v1.pbflutter.PBLinearGradient.tile_mode:type_name -> google.protobuf.Any
+	71,  // 75: lemmerelassal.v1.pbflutter.PBLinearGradient.transform:type_name -> google.protobuf.Any
+	71,  // 76: lemmerelassal.v1.pbflutter.PBGradient.colors:type_name -> google.protobuf.Any
+	71,  // 77: lemmerelassal.v1.pbflutter.PBGradient.transform:type_name -> google.protobuf.Any
+	71,  // 78: lemmerelassal.v1.pbflutter.PBDecorationImage.image:type_name -> google.protobuf.Any
+	71,  // 79: lemmerelassal.v1.pbflutter.PBDecorationImage.color_filter:type_name -> google.protobuf.Any
+	71,  // 80: lemmerelassal.v1.pbflutter.PBDecorationImage.fit:type_name -> google.protobuf.Any
+	71,  // 81: lemmerelassal.v1.pbflutter.PBDecorationImage.alignment:type_name -> google.protobuf.Any
+	71,  // 82: lemmerelassal.v1.pbflutter.PBDecorationImage.centerSlice:type_name -> google.protobuf.Any
+	71,  // 83: lemmerelassal.v1.pbflutter.PBDecorationImage.repeat:type_name -> google.protobuf.Any
+	70,  // 84: lemmerelassal.v1.pbflutter.PBNetworkImage.headers:type_name -> lemmerelassal.v1.pbflutter.PBNetworkImage.HeadersEntry
+	3,   // 85: lemmerelassal.v1.pbflutter.PBBoxFit.box_fit:type_name -> lemmerelassal.v1.pbflutter.EnumBoxFit
+	4,   // 86: lemmerelassal.v1.pbflutter.PBImageRepeat.repeat:type_name -> lemmerelassal.v1.pbflutter.EnumImageRepeat
+	5,   // 87: lemmerelassal.v1.pbflutter.PBBoxShape.box_shape:type_name -> lemmerelassal.v1.pbflutter.EnumBoxShape
+	6,   // 88: lemmerelassal.v1.pbflutter.PBTileMode.tile_mode:type_name -> lemmerelassal.v1.pbflutter.EnumTileMode
+	71,  // 89: lemmerelassal.v1.pbflutter.PBBorderRadius.top_left:type_name -> google.protobuf.Any
+	71,  // 90: lemmerelassal.v1.pbflutter.PBBorderRadius.top_right:type_name -> google.protobuf.Any
+	71,  // 91: lemmerelassal.v1.pbflutter.PBBorderRadius.bottom_left:type_name -> google.protobuf.Any
+	71,  // 92: lemmerelassal.v1.pbflutter.PBBorderRadius.bottom_right:type_name -> google.protobuf.Any
+	71,  // 93: lemmerelassal.v1.pbflutter.PBBorderRadiusAll.radius:type_name -> google.protobuf.Any
+	71,  // 94: lemmerelassal.v1.pbflutter.PBBorderRadiusOnly.top_left:type_name -> google.protobuf.Any
+	71,  // 95: lemmerelassal.v1.pbflutter.PBBorderRadiusOnly.top_right:type_name -> google.protobuf.Any
+	71,  // 96: lemmerelassal.v1.pbflutter.PBBorderRadiusOnly.bottom_left:type_name -> google.protobuf.Any
+	71,  // 97: lemmerelassal.v1.pbflutter.PBBorderRadiusOnly.bottom_right:type_name -> google.protobuf.Any
+	71,  // 98: lemmerelassal.v1.pbflutter.PBBorderAll.width:type_name -> google.protobuf.Any
+	71,  // 99: lemmerelassal.v1.pbflutter.PBBorderAll.color:type_name -> google.protobuf.Any
+	71,  // 100: lemmerelassal.v1.pbflutter.PBBorderAll.style:type_name -> google.protobuf.Any
+	7,   // 101: lemmerelassal.v1.pbflutter.PBBorderStyle.border_style:type_name -> lemmerelassal.v1.pbflutter.EnumBorderStyle
+	71,  // 102: lemmerelassal.v1.pbflutter.PBBoxShadow.color:type_name -> google.protobuf.Any
+	71,  // 103: lemmerelassal.v1.pbflutter.PBBoxShadow.offset:type_name -> google.protobuf.Any
+	71,  // 104: lemmerelassal.v1.pbflutter.PBBoxShadow.blur_radius:type_name -> google.protobuf.Any
+	71,  // 105: lemmerelassal.v1.pbflutter.PBBoxShadow.spread_radius:type_name -> google.protobuf.Any
+	106, // [106:106] is the sub-list for method output_type
+	106, // [106:106] is the sub-list for method input_type
+	106, // [106:106] is the sub-list for extension type_name
+	106, // [106:106] is the sub-list for extension extendee
+	0,   // [0:106] is the sub-list for field type_name
 }
 
 func init() { file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_init() }
@@ -2757,14 +5490,374 @@ func file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_init() {
 				return nil
 			}
 		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[32].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBDetailView); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[33].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBTabEntry); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[34].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBListView); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[35].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBKarte); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[36].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBScreenWidth); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[37].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBScreenHeight); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[38].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBRadiusElliptical); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[39].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBoxDecoration); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[40].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBlendMode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[41].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBTransformTranslate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[42].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBTransformRotate); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[43].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBTransformScale); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[44].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBLinearGradient); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[45].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBGradient); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[46].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBDecorationImage); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[47].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBNetworkImage); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[48].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBoxFit); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[49].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBAlignment); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[50].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBImageRepeat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[51].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBoxShape); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[52].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBTileMode); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[53].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBorderRadius); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[54].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBorderRadiusAll); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[55].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBorderRadiusOnly); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[56].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBFloat); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[57].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBInt); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[58].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBString); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[59].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBorderAll); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[60].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBorderStyle); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
+		file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_msgTypes[61].Exporter = func(v interface{}, i int) interface{} {
+			switch v := v.(*PBBoxShadow); i {
+			case 0:
+				return &v.state
+			case 1:
+				return &v.sizeCache
+			case 2:
+				return &v.unknownFields
+			default:
+				return nil
+			}
+		}
 	}
 	type x struct{}
 	out := protoimpl.TypeBuilder{
 		File: protoimpl.DescBuilder{
 			GoPackagePath: reflect.TypeOf(x{}).PkgPath(),
 			RawDescriptor: file_github_com_lemmerelassal_PBFlutter_proto_pbflutter_proto_rawDesc,
-			NumEnums:      1,
-			NumMessages:   32,
+			NumEnums:      8,
+			NumMessages:   63,
 			NumExtensions: 0,
 			NumServices:   0,
 		},
