@@ -29,9 +29,45 @@ message PBAlign {
     float align_y = 3; // -1.0 to +1.0
 }
 
+enum EnumTextAlign {
+    TEXT_ALIGN_INVALID = 0;
+    left = 1;
+
+    /// Align the text on the right edge of the container.
+    right = 2;
+  
+    /// Align the text in the center of the container.
+    center = 3;
+  
+    /// Stretch lines of text that end with a soft line break to fill the width of
+    /// the container.
+    ///
+    /// Lines that end with hard line breaks are aligned towards the [start] edge.
+    justify = 4;
+  
+    /// Align the text on the leading edge of the container.
+    ///
+    /// For left-to-right text ([TextDirection.ltr]), this is the left edge.
+    ///
+    /// For right-to-left text ([TextDirection.rtl]), this is the right edge.
+    start = 5;
+  
+    /// Align the text on the trailing edge of the container.
+    ///
+    /// For left-to-right text ([TextDirection.ltr]), this is the right edge.
+    ///
+    /// For right-to-left text ([TextDirection.rtl]), this is the left edge.
+    end = 6;
+}
+
+message PBTextAlign {
+    EnumTextAlign text_align = 1;
+}
+
 message PBText {
     string text = 1;
     google.protobuf.Any text_style = 2;
+    google.protobuf.Any text_align = 3;
 }
 
 
@@ -480,3 +516,24 @@ message PBBoxShadow {
     google.protobuf.Any blur_radius = 3;
     google.protobuf.Any spread_radius = 4;
 }
+
+message PBAdd {
+    repeated google.protobuf.Any operands = 1;
+}
+
+message PBMult {
+    repeated google.protobuf.Any operands = 1;
+}
+
+message PBAnd {
+    repeated google.protobuf.Any operands = 1;
+}
+
+message PBOr {
+    repeated google.protobuf.Any operands = 1;
+}
+
+message PBXor {
+    repeated google.protobuf.Any operands = 1;
+}
+

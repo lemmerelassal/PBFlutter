@@ -33,7 +33,10 @@ func Color(orgb uint32) *any.Any {
 	)
 }
 
-func Text(text string, textStyle *any.Any) *any.Any {
+func Text(text string, textStyle, textAlign *any.Any) *any.Any {
+	if textAlign == nil {
+		textAlign = TextAlign(pb.EnumTextAlign_left)
+	}
 	return PackAny(&pb.PBText{Text: text, TextStyle: textStyle})
 }
 
@@ -400,6 +403,9 @@ func String(value string) *any.Any {
 }
 
 func BorderAll(width, color, style *any.Any) *any.Any {
+	if style == nil {
+		style = BorderStyle(pb.EnumBorderStyle_BORDER_STYLE_NONE)
+	}
 	return PackAny(&pb.PBBorderAll{Width: width, Color: color, Style: style})
 }
 
@@ -409,6 +415,15 @@ func BorderStyle(borderStyle pb.EnumBorderStyle) *any.Any {
 	}*/
 	return PackAny(&pb.PBBorderStyle{
 		BorderStyle: borderStyle,
+	})
+}
+
+func TextAlign(textAlign pb.EnumTextAlign) *any.Any {
+	/*	if borderStyle == nil {
+		borderStyle = pb.EnumBorderStyle_BORDER_STYLE_NONE
+	}*/
+	return PackAny(&pb.PBTextAlign{
+		TextAlign: textAlign,
 	})
 }
 
